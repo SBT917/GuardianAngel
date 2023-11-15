@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 33561568}
   - component: {fileID: 33561567}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: PeopleHelpedNumText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 79408390}
   - component: {fileID: 79408392}
   m_Layer: 5
-  m_Name: Text (Legacy) (3)
+  m_Name: AngelRankText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,6 +408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411ec7d5c31a0dd47950f4d4430759d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peopleHelpedNumText: {fileID: 33561567}
+  scoreText: {fileID: 989508259}
+  angelRank: {fileID: 79408390}
+  godsComment: {fileID: 1527399702}
+  peopleHelped: 100
+  score: 500
 --- !u!4 &236141648
 Transform:
   m_ObjectHideFlags: 0
@@ -792,7 +798,7 @@ GameObject:
   - component: {fileID: 989508260}
   - component: {fileID: 989508259}
   m_Layer: 5
-  m_Name: Text (Legacy) (1)
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -927,6 +933,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1458559166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458559168}
+  - component: {fileID: 1458559167}
+  m_Layer: 0
+  m_Name: RankManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1458559167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458559166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa866dd9c389e14691f70d5e9f67ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RankList:
+    ranks: []
+--- !u!4 &1458559168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458559166}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 170.32878, y: 14.465306, z: 136.22287}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1512890495
 GameObject:
@@ -1401,7 +1453,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: -3.605531e-10, z: -1.4652622e-10, w: 0.7071067}
   m_LocalPosition: {x: -0.1294858, y: 2.9951715, z: -0.19200432}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 9222093069856451780}
   m_RootOrder: 7
