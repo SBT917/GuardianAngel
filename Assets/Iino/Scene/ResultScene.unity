@@ -412,8 +412,8 @@ MonoBehaviour:
   scoreText: {fileID: 989508259}
   angelRank: {fileID: 79408390}
   godsComment: {fileID: 1527399702}
-  peopleHelped: 100
-  score: 500
+  peopleHelped: 3
+  score: 2000
 --- !u!4 &236141648
 Transform:
   m_ObjectHideFlags: 0
@@ -963,8 +963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa866dd9c389e14691f70d5e9f67ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RankList:
-    ranks: []
 --- !u!4 &1458559168
 Transform:
   m_ObjectHideFlags: 0

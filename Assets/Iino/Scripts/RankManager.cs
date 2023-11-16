@@ -19,6 +19,7 @@ public class RankList
 
 public class RankManager : MonoBehaviour
 {
+    [NonSerialized]
     public RankList RankList;
 
     public static RankManager instance;

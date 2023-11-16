@@ -55,7 +55,7 @@ public class ResultManager : MonoBehaviour
         }
 
         peopleHelpedNumText.text = "助けた人：" + peopleHelped.ToString() + "人";
-        scoreText.text = "最終スコア：" + score.ToString();
+        scoreText.text = "最終スコア：" + score.ToString("N0");
         angelRank.text = rank.rank.ToString();
         godsComment.text = rank.comment.ToString();
     }
