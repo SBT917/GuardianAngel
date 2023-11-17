@@ -13,7 +13,7 @@ public class PlayerFallState : PlayerBaseState
     {
         _stateMachine.playerVelocity.y = 0f;
 
-        _stateMachine.playerAnimator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
+        //_stateMachine.playerAnimator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
     }
 
     public override void Tick()

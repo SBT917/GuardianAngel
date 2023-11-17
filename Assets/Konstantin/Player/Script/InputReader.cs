@@ -19,7 +19,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         _controls.Player.Enable();
     }
     public void OnDisable()
-    {
+    { 
         _controls.Player.Disable();
     }
     public void OnLook(InputAction.CallbackContext context)

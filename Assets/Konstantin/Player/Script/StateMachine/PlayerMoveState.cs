@@ -15,7 +15,7 @@ public class PlayerMoveState : PlayerBaseState
     {
         _stateMachine.playerVelocity.y = Physics.gravity.y;
 
-        _stateMachine.playerAnimator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
+        //_stateMachine.playerAnimator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
 
         _stateMachine.inputReader.onJumpPerformed += SwitchToJumpState;
     }
@@ -31,8 +31,8 @@ public class PlayerMoveState : PlayerBaseState
         FaceMoveDirection();
         Move();
 
-        _stateMachine.playerAnimator.SetFloat(MoveSpeedHash, _stateMachine.inputReader.moveComposite.sqrMagnitude > 0f ? 1f : 0f, 
-            AnimationDampTime, Time.deltaTime);
+        //_stateMachine.playerAnimator.SetFloat(MoveSpeedHash, _stateMachine.inputReader.moveComposite.sqrMagnitude > 0f ? 1f : 0f, 
+        //    AnimationDampTime, Time.deltaTime);
     }
 
     public override void Exit()
