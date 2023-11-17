@@ -18,17 +18,18 @@ public class ResultManager : MonoBehaviour
     private Text godsComment;
 
 
-    //デバッグ用　スコアを直接打ち込む
     [SerializeField]
     private int peopleHelped;
-    [SerializeField]
     private int score;
+
+    [SerializeField]
+    private int debugScore;
 
     private Rank rank;
     // Start is called before the first frame update
     void Start()
     {
-
+        ScoreManager.instance.AddScore(debugScore);
     }
 
     // Update is called once per frame
@@ -42,17 +43,15 @@ public class ResultManager : MonoBehaviour
 
     void LoadRank()
     {
+        //スコアからランクを取得
+        score = ScoreManager.instance.Score;
         rank = RankManager.instance.GetRank(score);
         UpdateResultText(rank);
     }
 
     void UpdateResultText(Rank rank)
     {
-        if (rank == null)
-        {
-            Debug.LogError("Rank object is null.");
-            return;
-        }
+        //表記の更新
 
         peopleHelpedNumText.text = "助けた人：" + peopleHelped.ToString() + "人";
         scoreText.text = "最終スコア：" + score.ToString("N0");
