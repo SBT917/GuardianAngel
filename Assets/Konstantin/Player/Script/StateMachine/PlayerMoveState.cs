@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMoveState : PlayerBaseState
@@ -13,35 +11,34 @@ public class PlayerMoveState : PlayerBaseState
 
     public override void Enter()
     {
-        _stateMachine.playerVelocity.y = Physics.gravity.y;
+        stateMachine.Velocity.y = Physics.gravity.y;
 
-        //_stateMachine.playerAnimator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
+        //stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
 
-        _stateMachine.inputReader.onJumpPerformed += SwitchToJumpState;
+        stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;
     }
 
     public override void Tick()
     {
-        if (!_stateMachine.characterController.isGrounded)
+        if (!stateMachine.Controller.isGrounded)
         {
-            _stateMachine.SwitchState(new PlayerFallState(_stateMachine));
+            stateMachine.SwitchState(new PlayerFallState(stateMachine));
         }
 
         CalculateMoveDirection();
         FaceMoveDirection();
         Move();
 
-        //_stateMachine.playerAnimator.SetFloat(MoveSpeedHash, _stateMachine.inputReader.moveComposite.sqrMagnitude > 0f ? 1f : 0f, 
-        //    AnimationDampTime, Time.deltaTime);
+        //stateMachine.Animator.SetFloat(MoveSpeedHash, stateMachine.InputReader.MoveComposite.sqrMagnitude > 0f ? 1f : 0f, AnimationDampTime, Time.deltaTime);
     }
 
     public override void Exit()
     {
-        _stateMachine.inputReader.onJumpPerformed -= SwitchToJumpState;
+        stateMachine.InputReader.OnJumpPerformed -= SwitchToJumpState;
     }
 
     private void SwitchToJumpState()
     {
-        _stateMachine.SwitchState(new PlayerJumpState(_stateMachine));
+        stateMachine.SwitchState(new PlayerJumpState(stateMachine));
     }
 }

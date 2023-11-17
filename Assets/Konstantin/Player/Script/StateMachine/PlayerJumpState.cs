@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerJumpState : PlayerBaseState
@@ -11,19 +9,18 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Enter()
     {
-        _stateMachine.playerVelocity = new Vector3(_stateMachine.playerVelocity.x, 
-                           _stateMachine.jumpForce, _stateMachine.playerVelocity.z);
+        stateMachine.Velocity = new Vector3(stateMachine.Velocity.x, stateMachine.JumpForce, stateMachine.Velocity.z);
 
-        _stateMachine.playerAnimator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
+        //stateMachine.Animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
     }
 
     public override void Tick()
     {
         ApplyGravity();
 
-        if (_stateMachine.playerVelocity.y <= 0f)
+        if (stateMachine.Velocity.y <= 0f)
         {
-            _stateMachine.SwitchState(new PlayerFallState(_stateMachine));
+            stateMachine.SwitchState(new PlayerFallState(stateMachine));
         }
 
         FaceMoveDirection();
