@@ -1,7 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
 [RequireComponent(typeof(InputReader))]
-[RequireComponent(typeof(Animator))]
+[RequireComponent (typeof(Animator))]
 [RequireComponent(typeof(CharacterController))]
 public class PlayerStateMachine : StateMachine
 {
@@ -17,10 +18,9 @@ public class PlayerStateMachine : StateMachine
     private void Start()
     {
         MainCamera = Camera.main.transform;
-
         InputReader = GetComponent<InputReader>();
         Animator = GetComponent<Animator>();
-        Controller = GetComponent<CharacterController>();
+        Controller  = GetComponent<CharacterController>();
 
         SwitchState(new PlayerMoveState(this));
     }
