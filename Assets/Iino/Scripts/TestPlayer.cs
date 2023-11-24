@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TestPlayer : MonoBehaviour
+public class SimpleFPSController : MonoBehaviour
 {
     public float speed = 5.0f;
     public float mouseSensitivity = 100.0f;
     public float jumpHeight = 1.0f;
+    public float ascendSpeed = 5.0f;
 
     private CharacterController controller;
     private float yRotation = 0.0f;
     private float yVelocity = 0.0f;
     private bool isGrounded;
-
-    private bool canMove = true;
+    private bool isFreeMode = false;
 
     void Start()
     {
@@ -23,48 +21,71 @@ public class TestPlayer : MonoBehaviour
 
     void Update()
     {
-        // マウスによる視点制御
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-        yRotation -= mouseY;
-        yRotation = Mathf.Clamp(yRotation, -90f, 90f);
-
-        transform.Rotate(Vector3.up * mouseX);
-        Camera.main.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
-
-        // キーボードによる移動制御
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
-
-        // ジャンプと重力
-        if (controller.isGrounded && yVelocity < 0)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            yVelocity = -2f;
+            GetComponent<Rigidbody>().useGravity = !GetComponent<Rigidbody>().useGravity;
+            isFreeMode = !isFreeMode;
+
+            if (isFreeMode)
+            {
+                yVelocity = 0.0f;
+            }
         }
 
-        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        if (!isFreeMode)
         {
-            yVelocity = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
-        }
+            // 通常の移動モード
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        yVelocity += Physics.gravity.y * Time.deltaTime;
+            yRotation -= mouseY;
+            yRotation = Mathf.Clamp(yRotation, -90f, 90f);
 
-        if(canMove)
-        {
+            transform.Rotate(Vector3.up * mouseX);
+            Camera.main.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            Vector3 move = transform.right * x + transform.forward * z;
+            controller.Move(move * speed * Time.deltaTime);
+
+            if (controller.isGrounded && yVelocity < 0)
+            {
+                yVelocity = -2f;
+            }
+
+            if (Input.GetButtonDown("Jump") && controller.isGrounded)
+            {
+                yVelocity = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
+            }
+
+            yVelocity += Physics.gravity.y * Time.deltaTime;
             controller.Move(new Vector3(0, yVelocity, 0) * Time.deltaTime);
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Enemy"))
+        else
         {
-            canMove = false;
-            TestManager.Instance.GameOver();
+            // 自由な飛び回りモード
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+            yRotation -= mouseY;
+            yRotation = Mathf.Clamp(yRotation, -90f, 90f);
+
+            transform.Rotate(Vector3.up * mouseX);
+            Camera.main.transform.localRotation = Quaternion.Euler(yRotation, 0f, 0f);
+
+            float verticalMovement = Input.GetAxis("Vertical");
+            float horizontalMovement = Input.GetAxis("Horizontal");
+
+            Vector3 freeModeMove = (transform.forward * verticalMovement + transform.right * horizontalMovement) * speed * Time.deltaTime;
+            controller.Move(freeModeMove);
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Vector3 ascend = Vector3.up * ascendSpeed * Time.deltaTime;
+                controller.Move(ascend);
+            }
         }
     }
 }
