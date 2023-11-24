@@ -6,9 +6,13 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerStateMachine : StateMachine
 {
+
+    //速度
     public Vector3 Velocity;
     public float MovementSpeed { get; private set; } = 5f;
+    //ジャンプ力
     public float JumpForce { get; private set; } = 5f;
+    //カメラ回転ダンプ"
     public float LookRotationDampFactor { get; private set; } = 10f;
     public Transform MainCamera { get; private set; }
     public InputReader InputReader { get; private set; }

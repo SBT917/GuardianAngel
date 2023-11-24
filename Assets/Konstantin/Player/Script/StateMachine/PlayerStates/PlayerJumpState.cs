@@ -19,6 +19,7 @@ public class PlayerJumpState : PlayerBaseState
     }
     public override void Tick()
     {
+        ApplyGravity();
         if(stateMachine.Velocity.y<=0f)
         {
             stateMachine.SwitchState(new PlayerFallState(stateMachine));
