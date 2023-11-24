@@ -9,6 +9,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public Vector2 MouseDelta;
     public Vector2 MoveComposite;
 
+    public float Altitude;
+
     public Action OnJumpPerformed;
 
     private Controls controls;
@@ -40,5 +42,10 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     }
     public void OnUse(InputAction.CallbackContext context)
     {
+
+    }
+    public void OnFly(InputAction.CallbackContext context)
+    {
+        Altitude = context.ReadValue<float>();
     }
 }

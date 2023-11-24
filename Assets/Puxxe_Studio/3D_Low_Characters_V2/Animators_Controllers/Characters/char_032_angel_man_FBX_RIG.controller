@@ -628,7 +628,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: char_000_a081_punch_stand
+  m_Name: Fly
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
