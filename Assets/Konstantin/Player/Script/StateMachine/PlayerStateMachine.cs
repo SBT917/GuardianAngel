@@ -19,12 +19,16 @@ public class PlayerStateMachine : StateMachine
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
 
+    [field: SerializeField] public float PlayerMaxStamina { get; set; } = 10f;
+    [field: SerializeField] public float PlayerStamina { get; set; }
+
     private void Start()
     {
         MainCamera = Camera.main.transform;
         InputReader = GetComponent<InputReader>();
         Animator = GetComponent<Animator>();
         Controller  = GetComponent<CharacterController>();
+        PlayerStamina = PlayerMaxStamina;
 
         SwitchState(new PlayerMoveState(this));
     }

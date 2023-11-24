@@ -17,4 +17,9 @@ public abstract class StateMachine : MonoBehaviour
     {
         currentState?.Tick();
     }
+
+    public State GetState()
+    {
+        return currentState;
+    }
 }

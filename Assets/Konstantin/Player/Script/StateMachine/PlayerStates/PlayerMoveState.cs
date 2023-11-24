@@ -15,7 +15,6 @@ public class PlayerMoveState : PlayerBaseState
     }
     public override void Enter()
     {
-        
         stateMachine.Velocity.y = Physics.gravity.y;
         stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
         stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;
@@ -32,6 +31,7 @@ public class PlayerMoveState : PlayerBaseState
         }
         CalculateMoveDirection();
         FaceMoveDirection();
+        RestoreStamina();
         Move();
 
         stateMachine.Animator.SetFloat(MoveSpeedHash, stateMachine.InputReader.MoveComposite.sqrMagnitude > 0f ? 
@@ -40,5 +40,14 @@ public class PlayerMoveState : PlayerBaseState
     private void SwitchToJumpState()
     {
         stateMachine.SwitchState(new PlayerJumpState(stateMachine));
+    }
+
+    private void RestoreStamina()
+    {
+        if(stateMachine.PlayerStamina < stateMachine.PlayerMaxStamina)
+        {
+            stateMachine.PlayerStamina += 2f * Time.deltaTime;
+            if(stateMachine.PlayerStamina > stateMachine.PlayerMaxStamina) stateMachine.PlayerStamina = stateMachine.PlayerMaxStamina;
+        }
     }
 }
