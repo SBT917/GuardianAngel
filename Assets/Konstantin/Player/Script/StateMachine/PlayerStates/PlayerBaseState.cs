@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.HID;
 
 public abstract class PlayerBaseState : State
 {
@@ -19,10 +20,12 @@ public abstract class PlayerBaseState : State
 
         stateMachine.Velocity.x = moveDirection.x * stateMachine.MovementSpeed;
         stateMachine.Velocity.z = moveDirection.z * stateMachine.MovementSpeed;
+        stateMachine.MovementSpeedMultiplier = 1;
 
-        if(stateMachine.GetState().GetType() == typeof(PlayerFlyState))
+        if (stateMachine.GetState().GetType() == typeof(PlayerFlyState))
         {
             stateMachine.Velocity.y = stateMachine.InputReader.Altitude;
+            stateMachine.MovementSpeedMultiplier = 2;
         }
     }
 
@@ -46,6 +49,6 @@ public abstract class PlayerBaseState : State
 
     protected void Move()
     {
-        stateMachine.Controller.Move(stateMachine.Velocity * Time.deltaTime);
+        stateMachine.Controller.Move(stateMachine.Velocity * stateMachine.MovementSpeedMultiplier * Time.deltaTime);
     }
 }

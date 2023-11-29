@@ -29,6 +29,9 @@ public class PlayerMoveState : PlayerBaseState
         {
             stateMachine.SwitchState(new PlayerFallState(stateMachine));
         }
+
+
+        // Does the ray intersect any objects excluding the player layer
         CalculateMoveDirection();
         FaceMoveDirection();
         RestoreStamina();
