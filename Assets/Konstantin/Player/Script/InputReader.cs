@@ -11,6 +11,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     public float Altitude;
 
+    private IGrabbable grabbingObject;
+
     public Action OnJumpPerformed;
 
     private Controls controls;
@@ -42,7 +44,28 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     }
     public void OnUse(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
 
+
+        if(grabbingObject == null)
+        {
+            RaycastHit hit;
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+            Debug.DrawRay(pos, transform.TransformDirection(Vector3.forward) * 2.0f, Color.red);
+            if (Physics.Raycast(pos, transform.TransformDirection(Vector3.forward), out hit, 2.0f))
+            {
+                if (hit.transform.TryGetComponent(out IGrabbable grabbable))
+                {
+                    grabbable.Grabbed(transform);
+                    grabbingObject = grabbable;
+                }
+            }
+        }
+        else
+        {
+            grabbingObject.Release(transform);
+            grabbingObject = null;
+        }
     }
     public void OnFly(InputAction.CallbackContext context)
     {
