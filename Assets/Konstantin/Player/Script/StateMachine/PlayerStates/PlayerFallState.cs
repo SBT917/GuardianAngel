@@ -17,14 +17,19 @@ public class PlayerFallState : PlayerBaseState
         stateMachine.Velocity.y = 0f;
         stateMachine.Animator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
     }
-    public override void Exit() { }
+    
     public override void Tick()
     {
         ApplyGravity();
         Move();
-        if(stateMachine.Controller.isGrounded) 
+        if (stateMachine.Controller.isGrounded)
         {
-            stateMachine.SwitchState(new PlayerMoveState(stateMachine));
+            stateMachine.SwitchState(new PlayerLandState(stateMachine));
         }
+    }
+
+    public override void Exit()
+    {
+        
     }
 }
