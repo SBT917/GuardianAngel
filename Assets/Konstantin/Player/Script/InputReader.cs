@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
+    private StateMachine stateMachine;
+
     public Vector2 MouseDelta;
     public Vector2 MoveComposite;
 
@@ -15,13 +17,18 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     private Controls controls;
 
+    private PlayerGrab playerGrab;
+
 
     private void OnEnable()
     {
         if (controls != null) return;
+        TryGetComponent(out stateMachine);
         controls = new Controls();
         controls.Player.SetCallbacks(this);
         controls.Player.Enable();
+
+        TryGetComponent(out playerGrab);
     }
     public void OnDisable()
     {
@@ -42,7 +49,17 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     }
     public void OnUse(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
 
+
+        if(playerGrab.GrabbingObject == null)
+        {
+            playerGrab.Grab();
+        }
+        else
+        {
+            playerGrab.Release();
+        }
     }
     public void OnFly(InputAction.CallbackContext context)
     {

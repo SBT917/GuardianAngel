@@ -4,10 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Object
-  - car
   - Ground
-  - tower
+  - Enemy
+  - Ball
   layers:
   - Default
   - TransparentFX
