@@ -1717,8 +1717,8 @@ GameObject:
   - component: {fileID: 5746404811296970012}
   - component: {fileID: 5203326387668254155}
   - component: {fileID: 5510581714663858605}
-  - component: {fileID: 7808412425788288665}
   - component: {fileID: 181354967786259605}
+  - component: {fileID: 7808412425788288665}
   - component: {fileID: 7319472956795910226}
   m_Layer: 0
   m_Name: PlayerPrefab
@@ -1749,7 +1749,7 @@ Transform:
   - {fileID: 3701587315725027315}
   - {fileID: 4573274795210428902}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5203326387668254155
 Animator:
@@ -1798,21 +1798,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 3, z: 0}
---- !u!114 &7808412425788288665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4968741520837693350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8565b746b6a1c44792593d1672e6a6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MouseDelta: {x: 0, y: 0}
-  MoveComposite: {x: 0, y: 0}
-  Altitude: 0
 --- !u!114 &181354967786259605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,12 +1807,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 4968741520837693350}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 008a03f583f6e8e4ca8dabf0e360a964, type: 3}
+  m_Script: {fileID: 11500000, guid: d1cc36abc75a13c49b3b3d7df6ae5c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MouseDelta: {x: 0, y: 0}
+  MoveComposite: {x: 0, y: 0}
+  Altitude: 0
+--- !u!114 &7808412425788288665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4968741520837693350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb26e4c3e28b2914a936f49067cc20a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
-  <PlayerMaxStamina>k__BackingField: 30
-  <PlayerStamina>k__BackingField: 10
+  <PlayerMaxStamina>k__BackingField: 10
+  <PlayerStamina>k__BackingField: 0
 --- !u!114 &7319472956795910226
 MonoBehaviour:
   m_ObjectHideFlags: 0
