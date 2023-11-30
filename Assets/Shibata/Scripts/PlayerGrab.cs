@@ -45,7 +45,8 @@ public class PlayerGrab : MonoBehaviour
     {
         if (GrabbingObject == null) return;
 
-        grabbable.Release(-transform.up, 10);
+        grabbable.Release(stateMachine.GetState().GetType() == typeof(PlayerFlyState) ?
+                            transform.TransformDirection(Vector3.down) : transform.TransformDirection(Vector3.forward), 10);
         GrabbingObject = null;
     }
 
