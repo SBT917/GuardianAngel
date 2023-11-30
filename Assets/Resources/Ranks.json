@@ -1,0 +1,49 @@
+{
+  "ranks": [
+    {
+      "rank": "熾天使",
+      "minScore": 800,
+      "comment": ""
+    },
+    {
+      "rank": "智天使",
+      "minScore": 700,
+      "comment": ""
+    },
+    {
+      "rank": "座天使",
+      "minScore": 600,
+      "comment": "b"
+    },
+    {
+      "rank": "主天使",
+      "minScore": 500,
+      "comment": "c"
+    },
+    {
+      "rank": "力天使",
+      "minScore": 400,
+      "comment": "d"
+    },
+    {
+      "rank": "能天使",
+      "minScore": 300,
+      "comment": "e"
+    },
+    {
+      "rank": "権天使",
+      "minScore": 200,
+      "comment": "fu*k u b*tch"
+    },
+    {
+      "rank": "大天使",
+      "minScore": 100,
+      "comment": "だるw"
+    },
+    {
+      "rank": "天使",
+      "minScore": 0,
+      "comment": "カス"
+    }
+  ]
+}
