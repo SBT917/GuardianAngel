@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/asaumi/script/Destroy.cs.meta
+guid: cb26e4c3e28b2914a936f49067cc20a8
+========
+guid: 008a03f583f6e8e4ca8dabf0e360a964
+>>>>>>>> origin/master:Assets/Konstantin/Player/Script/StateMachine/PlayerStateMachine.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/asaumi/script/Gravity.cs.meta
+guid: 001320c80da674e449e2a1b92e93516a
+========
 guid: f98034b7b21b65e4f88b830d6d42f025
+>>>>>>>> origin/master:Assets/Konstantin/Player/InputActions/Controls.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
