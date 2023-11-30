@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class PlayerGrab : MonoBehaviour
 {
     private PlayerStateMachine stateMachine;
-    private IGrabbable grabbable;
+    private GrabbableObject grabbable;
     [SerializeField]
     private float followSpeed;
 
