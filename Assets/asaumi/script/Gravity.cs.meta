@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/asaumi/script/Gravity.cs.meta
+guid: d65a6197b0e9b0048bfda4bfe86078d7
+========
+guid: f98034b7b21b65e4f88b830d6d42f025
+>>>>>>>> origin/master:Assets/Konstantin/Player/InputActions/Controls.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

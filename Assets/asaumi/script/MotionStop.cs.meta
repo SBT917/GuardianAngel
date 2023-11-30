@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/asaumi/script/MotionStop.cs.meta
+guid: db78bc4c99d465442981ee8b39cc86bf
+========
+guid: e8565b746b6a1c44792593d1672e6a6d
+>>>>>>>> origin/master:Assets/Konstantin/Player/Script/InputReader.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
