@@ -6,24 +6,29 @@ using UnityEngine.InputSystem;
 
 public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
+    private StateMachine stateMachine;
+
     public Vector2 MouseDelta;
     public Vector2 MoveComposite;
 
     public float Altitude;
 
-    private IGrabbable grabbingObject;
-
     public Action OnJumpPerformed;
 
     private Controls controls;
+
+    private PlayerGrab playerGrab;
 
 
     private void OnEnable()
     {
         if (controls != null) return;
+        TryGetComponent(out stateMachine);
         controls = new Controls();
         controls.Player.SetCallbacks(this);
         controls.Player.Enable();
+
+        TryGetComponent(out playerGrab);
     }
     public void OnDisable()
     {
@@ -47,24 +52,13 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if (!context.performed) return;
 
 
-        if(grabbingObject == null)
+        if(playerGrab.GrabbingObject == null)
         {
-            RaycastHit hit;
-            Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-            Debug.DrawRay(pos, transform.TransformDirection(Vector3.forward) * 2.0f, Color.red);
-            if (Physics.Raycast(pos, transform.TransformDirection(Vector3.forward), out hit, 2.0f))
-            {
-                if (hit.transform.TryGetComponent(out IGrabbable grabbable))
-                {
-                    grabbable.Grabbed(transform);
-                    grabbingObject = grabbable;
-                }
-            }
+            playerGrab.Grab();
         }
         else
         {
-            grabbingObject.Release(transform);
-            grabbingObject = null;
+            playerGrab.Release();
         }
     }
     public void OnFly(InputAction.CallbackContext context)

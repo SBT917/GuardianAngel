@@ -10,6 +10,7 @@ public class PlayerStateMachine : StateMachine
     //速度
     public Vector3 Velocity;
     public float MovementSpeed { get; private set; } = 5f;
+    public float MovementSpeedMultiplier { get; set; }
     //ジャンプ力
     public float JumpForce { get; private set; } = 5f;
     //カメラ回転ダンプ"
@@ -18,6 +19,7 @@ public class PlayerStateMachine : StateMachine
     public InputReader InputReader { get; private set; }
     public Animator Animator { get; private set; }
     public CharacterController Controller { get; private set; }
+    public PlayerGrab GrabComponent { get; private set; }
 
     [field: SerializeField] public float PlayerMaxStamina { get; set; } = 10f;
     [field: SerializeField] public float PlayerStamina { get; set; }
@@ -28,6 +30,7 @@ public class PlayerStateMachine : StateMachine
         InputReader = GetComponent<InputReader>();
         Animator = GetComponent<Animator>();
         Controller  = GetComponent<CharacterController>();
+        GrabComponent = GetComponent<PlayerGrab>();
         PlayerStamina = PlayerMaxStamina;
 
         SwitchState(new PlayerMoveState(this));
