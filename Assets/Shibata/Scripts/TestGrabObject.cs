@@ -12,20 +12,19 @@ public class TestGrabObject : MonoBehaviour, IGrabbable
         TryGetComponent(out rb);
     }
 
-    public void Grabbed(Transform transform)
+    public GameObject Grabbed()
     {
         Debug.Log(gameObject.name + "‚ª’Í‚Ü‚ê‚½");
-        this.transform.parent = transform;
         col.enabled = false;
+        return gameObject;
     }
 
-    public void Release(Transform transform)
+    public void Release(Vector3 direction, float force)
     {
         Debug.Log(gameObject.name + "‚ª•ú‚³‚ê‚½");
-        this.transform.parent = null;
         col.enabled = true;
         rb.useGravity = true;
-        Vector3 vel = transform.forward * 25;
+        Vector3 vel = direction * force;
         rb.AddForce(vel, ForceMode.Impulse);
     }
 }
