@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -25,19 +27,30 @@ public class ResultManager : MonoBehaviour
     [SerializeField]
     private int debugScore;
 
+    [SerializeField]
+    private string nextSceneName;
+
     private Rank rank;
+
+    private InputAction _pressAnyKeyAction =
+        new InputAction(type: InputActionType.PassThrough, binding: "*/<Button>", interactions: "Press");
+
+    private void OnEnable() => _pressAnyKeyAction.Enable();
+    private void OnDisable() => _pressAnyKeyAction.Disable();
+
     // Start is called before the first frame update
     void Start()
     {
         ScoreManager.instance.AddScore(debugScore);
+        LoadRank();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R)) 
+        if (_pressAnyKeyAction.triggered)
         {
-            LoadRank();
+            SceneManager.LoadScene(nextSceneName);
         }
     }
 
