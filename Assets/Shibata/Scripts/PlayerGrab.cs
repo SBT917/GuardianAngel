@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
 
 public class PlayerGrab : MonoBehaviour
 {
@@ -30,9 +31,7 @@ public class PlayerGrab : MonoBehaviour
         RaycastHit hit;
         Vector3 direction = stateMachine.GetState().GetType() == typeof(PlayerFlyState) ? 
                             transform.TransformDirection(Vector3.down) : transform.TransformDirection(Vector3.forward);
-        Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        Debug.DrawRay(pos, direction * 2.0f, Color.red);
-        if (Physics.Raycast(pos, direction, out hit, 2.0f))
+        if (Physics.BoxCast(transform.position, Vector3.one, direction, out hit, Quaternion.identity, 1f))
         {
             if (hit.transform.TryGetComponent(out grabbable))
             {
@@ -52,27 +51,27 @@ public class PlayerGrab : MonoBehaviour
 
     private void FollowGrabbingObject()
     {
-        if (GrabbingObject != null)
+        if (GrabbingObject == null) return;
+
+        Vector3 targetPos;
+        if (stateMachine.GetState().GetType().Equals(typeof(PlayerFlyState)))
         {
-            Vector3 targetPos;
-            if (stateMachine.GetState().GetType().Equals(typeof(PlayerFlyState))) 
-            {
-                targetPos = transform.position + transform.up;
-                //targetPos.y = transform.position.y - 2;
-            }
-            else
-            {
-                targetPos = transform.position + transform.forward * 3;
-                targetPos.y += 1;
-            }
-             
-            
-            Vector3 moveDirection = (targetPos - GrabbingObject.transform.position).normalized;
-            if(Vector3.Distance(targetPos, GrabbingObject.transform.position) > 2)
-            {
-                GrabbingObject.transform.position += moveDirection * followSpeed * Time.deltaTime;
-                
-            }
+            targetPos = transform.position + transform.up;
+            //targetPos.y = transform.position.y - 2;
+        }
+        else
+        {
+            targetPos = transform.position + transform.forward * 3;
+            targetPos.y += 1;
+        }
+
+
+        Vector3 moveDirection = (targetPos - GrabbingObject.transform.position).normalized;
+        if (Vector3.Distance(targetPos, GrabbingObject.transform.position) > 2)
+        {
+            GrabbingObject.transform.position += moveDirection * followSpeed * Time.deltaTime;
+
         }
     }
+
 }

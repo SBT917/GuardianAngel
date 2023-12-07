@@ -9,7 +9,7 @@ public class StaminaGauge : MonoBehaviour
     [SerializeField] private PlayerStateMachine stateMachine;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         TryGetComponent(out slider);
         slider.maxValue = stateMachine.PlayerMaxStamina;

@@ -49,7 +49,7 @@ public class PlayerMoveState : PlayerBaseState
     {
         if(stateMachine.PlayerStamina < stateMachine.PlayerMaxStamina)
         {
-            stateMachine.PlayerStamina += 2f * Time.deltaTime;
+            stateMachine.PlayerStamina += 5f * Time.deltaTime;
             if(stateMachine.PlayerStamina > stateMachine.PlayerMaxStamina) stateMachine.PlayerStamina = stateMachine.PlayerMaxStamina;
             stateMachine.onChangeStamina?.Invoke(stateMachine.PlayerStamina);
         }
