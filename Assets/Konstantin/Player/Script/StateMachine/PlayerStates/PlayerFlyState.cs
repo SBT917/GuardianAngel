@@ -23,6 +23,7 @@ public class PlayerFlyState : PlayerBaseState
     public override void Tick()
     {
         stateMachine.PlayerStamina -= 4f * Time.deltaTime;
+        stateMachine.onChangeStamina?.Invoke(stateMachine.PlayerStamina);
         if (stateMachine.PlayerStamina <= 0)
         {
             stateMachine.SwitchState(new PlayerFallState(stateMachine));
