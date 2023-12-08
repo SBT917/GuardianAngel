@@ -28,7 +28,9 @@ public class StaminaGauge : MonoBehaviour
 
         if(value < slider.maxValue / 3)
         {
-            fill.color = staminaLowColor;
+            Color color = new Color(staminaLowColor.r, staminaLowColor.g, staminaLowColor.b, 
+                Mathf.Lerp(0.5f, 1f, Mathf.PingPong(Time.time * 5, 1)));
+            fill.color = color;
         }
         else
         {
