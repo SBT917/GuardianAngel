@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,10 +22,11 @@ public class PlayerStateMachine : StateMachine
     public CharacterController Controller { get; private set; }
     public PlayerGrab GrabComponent { get; private set; }
 
-    [field: SerializeField] public float PlayerMaxStamina { get; set; } = 10f;
+    [field: SerializeField] public float PlayerMaxStamina { get; set; } = 50f;
     [field: SerializeField] public float PlayerStamina { get; set; }
+    public Action<float> onChangeStamina;
 
-    private void Start()
+    private void Awake()
     {
         MainCamera = Camera.main.transform;
         InputReader = GetComponent<InputReader>();
@@ -35,4 +37,6 @@ public class PlayerStateMachine : StateMachine
 
         SwitchState(new PlayerMoveState(this));
     }
+
+
 }

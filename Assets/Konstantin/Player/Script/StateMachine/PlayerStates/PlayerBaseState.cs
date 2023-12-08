@@ -24,7 +24,7 @@ public abstract class PlayerBaseState : State
 
         if (stateMachine.GetState().GetType() == typeof(PlayerFlyState))
         {
-            stateMachine.Velocity.y = stateMachine.InputReader.Altitude;
+            stateMachine.Velocity.y = stateMachine.InputReader.Altitude * 2;
             stateMachine.MovementSpeedMultiplier = 2;
         }
     }
