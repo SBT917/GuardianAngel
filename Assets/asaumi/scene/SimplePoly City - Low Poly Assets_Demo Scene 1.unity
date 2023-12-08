@@ -4827,6 +4827,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &89778187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4839,6 +4841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &89778188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9071,6 +9075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &167099307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9083,6 +9089,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &167099308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11174,6 +11182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &213218427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11186,6 +11196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &213218428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13880,6 +13892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: human
       objectReference: {fileID: 0}
+    - target: {fileID: 3693203367982963284, guid: 73ee99c431e47ba40a4490bd53e325b3, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
     - target: {fileID: 4706648618359618369, guid: 73ee99c431e47ba40a4490bd53e325b3, type: 3}
       propertyPath: m_Height
       value: 1
@@ -13919,7 +13935,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 917137170552845499, guid: 73ee99c431e47ba40a4490bd53e325b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1672154177}
   m_SourcePrefab: {fileID: 100100000, guid: 73ee99c431e47ba40a4490bd53e325b3, type: 3}
 --- !u!1 &265164650
 GameObject:
@@ -31131,6 +31150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &605455429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31143,6 +31164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &605455430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31694,6 +31717,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &612509338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31706,6 +31731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &612509339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36235,6 +36262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &686892480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36247,6 +36276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &686892481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49831,6 +49862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &910010105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49843,6 +49876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &910010106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52608,6 +52643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &961688204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52620,6 +52657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &961688205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55086,6 +55125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1010385002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55098,6 +55139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1010385003
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63947,6 +63990,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1145801444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63959,6 +64004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1145801445
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74800,6 +74847,72 @@ Transform:
   m_Father: {fileID: 348219546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1338090140
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8701312239527680239, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_Name
+      value: Vehicle_Police Car (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_TagString
+      value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_RootOrder
+      value: 931
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1576213011}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1576213010}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1576213009}
+  m_SourcePrefab: {fileID: 100100000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
 --- !u!1 &1339713308
 GameObject:
   m_ObjectHideFlags: 0
@@ -76123,6 +76236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1360502361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76135,6 +76250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1360502362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83116,6 +83233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1494499681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83128,6 +83247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1494499682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83483,6 +83604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1501064121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83495,6 +83618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1501064122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84252,6 +84377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1523259033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84264,6 +84391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1523259034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -86271,6 +86400,72 @@ Transform:
   m_Father: {fileID: 367538769}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1576213008 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+  m_PrefabInstance: {fileID: 1338090140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1576213009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576213008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3fcf2171e32a94ea149f0ea2c1702f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -5
+--- !u!54 &1576213010
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576213008}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!65 &1576213011
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576213008}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.9580617, y: 2.317875, z: 6.320542}
+  m_Center: {x: 0.0017923114, y: 1.1553164, z: -0.19318268}
 --- !u!1 &1576345531
 GameObject:
   m_ObjectHideFlags: 0
@@ -86955,6 +87150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1589551762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86967,6 +87164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1589551763
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87146,6 +87345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1590596026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87158,6 +87359,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1590596027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89336,6 +89539,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8701312239527680239, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 1af0a2c8773f85c40bdb120f32cd8a8a, type: 3}
       propertyPath: m_Name
       value: Vehicle_Police Car (3)
@@ -91826,6 +92033,32 @@ Transform:
   m_Father: {fileID: 1526771714}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1672154175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 917137170552845499, guid: 73ee99c431e47ba40a4490bd53e325b3, type: 3}
+  m_PrefabInstance: {fileID: 265162236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1672154177
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672154175}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1673984685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95083,6 +95316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1725418625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95095,6 +95330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1725418626
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98309,6 +98546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &1783049830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98321,6 +98560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &1783049831
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -118437,6 +118678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!114 &2120181409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118449,6 +118692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!65 &2120181410
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120299,6 +120544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6db939b03ef24d4db6948ab8bb78d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handObjectsList: []
+  handObjectSelected: 0
 --- !u!1 &701002769489060946
 GameObject:
   m_ObjectHideFlags: 0
@@ -120331,6 +120578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bd5620a618be746945fb8834765d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  costumesList: []
+  costumeSelected: 0
 --- !u!4 &701002769489060948
 Transform:
   m_ObjectHideFlags: 0

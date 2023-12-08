@@ -16,7 +16,7 @@ public class MotionStop : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // 衝突したオブジェクトが "car" タグを持つかどうかを確認
-        if (collision.gameObject.tag=="car")
+        if (collision.gameObject.tag=="Car")
         {
             // 衝突が発生したらアニメーターを停止
             animator.enabled = false;
