@@ -15,7 +15,7 @@ public class EndLanding : StateMachineBehaviour
         //　isGroudedで判定する事も出来るが、動かしていない時はある程度再生してからLandingをfalseにする
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.8f)
         {
-            animator.SetBool("Landing", false);
+            //animator.SetBool("Landing", false);
         }
     }
 
