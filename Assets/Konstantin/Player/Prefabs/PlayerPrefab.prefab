@@ -808,7 +808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029511454581913942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1736,7 +1736,7 @@ Transform:
   m_GameObject: {fileID: 4968741520837693350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3679302254526481794}
@@ -1749,7 +1749,7 @@ Transform:
   - {fileID: 3701587315725027315}
   - {fileID: 4573274795210428902}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5203326387668254155
 Animator:
@@ -1826,7 +1826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0, z: 0}
-  <PlayerMaxStamina>k__BackingField: 10
+  <PlayerMaxStamina>k__BackingField: 30
   <PlayerStamina>k__BackingField: 0
 --- !u!114 &7319472956795910226
 MonoBehaviour:
