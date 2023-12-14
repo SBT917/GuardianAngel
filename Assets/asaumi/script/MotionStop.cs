@@ -5,11 +5,13 @@ using UnityEngine.Animations;
 
 public class MotionStop : MonoBehaviour
 {
+    private HumanStateMachine stateMachine;
     private Animator animator;
     private bool collisionOccurred = false;
 
     void Start()
     {
+        stateMachine = GetComponent<HumanStateMachine>();
         animator = GetComponent<Animator>();
     }
 
