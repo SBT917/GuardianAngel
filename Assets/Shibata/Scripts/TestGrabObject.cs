@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestGrabObject : GrabbableObject
+public class TestGrabObject :MonoBehaviour, IGrabbable
 {
     Collider col;
     Rigidbody rb;
@@ -12,14 +12,14 @@ public class TestGrabObject : GrabbableObject
         TryGetComponent(out rb);
     }
 
-    public override GameObject Grabbed()
+    public GameObject Grabbed()
     {
         Debug.Log(gameObject.name + "‚ª’Í‚Ü‚ê‚½");
         col.enabled = false;
         return gameObject;
     }
 
-    public override void Release(Vector3 direction, float force)
+    public void Release(Vector3 direction, float force)
     {
         Debug.Log(gameObject.name + "‚ª•ú‚³‚ê‚½");
         col.enabled = true;
