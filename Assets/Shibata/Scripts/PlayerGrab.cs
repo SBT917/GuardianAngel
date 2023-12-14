@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.PlayerSettings;
 
 public class PlayerGrab : MonoBehaviour
 {
     private PlayerStateMachine stateMachine;
-    private GrabbableObject grabbable;
+    private IGrabbable grabbable;
     [SerializeField]
     private float followSpeed;
 
@@ -45,7 +43,7 @@ public class PlayerGrab : MonoBehaviour
         if (GrabbingObject == null) return;
 
         grabbable.Release(stateMachine.GetState().GetType() == typeof(PlayerFlyState) ?
-                            transform.TransformDirection(Vector3.down) : transform.TransformDirection(Vector3.forward), 10);
+                            transform.TransformDirection(Vector3.down) : transform.TransformDirection(Vector3.forward), 100);
         GrabbingObject = null;
     }
 
