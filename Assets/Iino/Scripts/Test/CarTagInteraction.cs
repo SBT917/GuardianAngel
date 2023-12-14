@@ -12,9 +12,11 @@ public class CarTagInteraction : MonoBehaviour
 
     [SerializeField]
     private GameObject ClashEffect;
+    
+    private bool wasClashed;
 
     [SerializeField]
-    private bool wasClashed;
+    private bool autoDestroy = true;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Car"))
@@ -23,8 +25,12 @@ public class CarTagInteraction : MonoBehaviour
             {
                 CarPatrol carPatrol = GetComponent<CarPatrol>();
                 carPatrol.Invalid();
-                CarManager.instance.DecreasedCar();
-                Destroy(gameObject, 10f);
+                CarSpawner.instance.DecreasedCar();
+
+                if (autoDestroy)
+                {
+                    Destroy(gameObject, 10f);
+                }
                 wasClashed = true;
             }
             
