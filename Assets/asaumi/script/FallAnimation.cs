@@ -40,6 +40,10 @@ public class FallAnimation : MonoBehaviour
             falling = true;
             animator.SetBool("Walk", false);
         }
+        if(check==true)
+        {
+            Destroy(gameObject,5f);
+        }
     }
     private void OnCollisionEnter(UnityEngine.Collision collision)
     {
