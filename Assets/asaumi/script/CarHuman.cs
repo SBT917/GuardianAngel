@@ -8,30 +8,31 @@ public class MotionStop : MonoBehaviour
     private HumanStateMachine stateMachine;
     private Animator animator;
     private bool collisionOccurred = false;
+    public GameObject DeathHuman;
+    bool DeathCheck;
 
     void Start()
     {
         stateMachine = GetComponent<HumanStateMachine>();
         animator = GetComponent<Animator>();
+        DeathCheck = false;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        // 衝突したオブジェクトが "car" タグを持つかどうかを確認
         if (collision.gameObject.tag=="Car")
         {
             // 衝突が発生したらアニメーターを停止
             animator.enabled = false;
             collisionOccurred = true;
+           
             Debug.Log("判定あり");
-        }
-        if (collision.gameObject.tag == "Ground")
-        {
-            // 衝突が発生したらアニメーターを停止
-            animator.enabled = false;
-            collisionOccurred = true;
-            Debug.Log("判定あり");
-        }
+            if (DeathCheck == false)
+            {
+                Instantiate(DeathHuman, collision.contacts[0].point, Quaternion.identity);
+                DeathCheck = true; 
+            }
+        Destroy(gameObject);}
     }
     private void Update()
     {
