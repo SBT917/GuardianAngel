@@ -36,7 +36,8 @@ public class CarPatrol : MonoBehaviour
 
     public void GotoNextPoint()
     {
-        if(returnInitPoint) 
+        agent.velocity = Vector3.zero;
+        if (returnInitPoint) 
         { 
             Destroy(gameObject);
             return;
