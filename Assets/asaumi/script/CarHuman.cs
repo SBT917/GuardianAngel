@@ -32,7 +32,10 @@ public class MotionStop : MonoBehaviour
                 Instantiate(DeathHuman, collision.contacts[0].point, Quaternion.identity);
                 DeathCheck = true; 
             }
-        Destroy(gameObject);}
+            --HumanManager.instance.HumanCount;
+            ++HumanManager.instance.HumanDeathCount;
+            Destroy(gameObject);
+        }
     }
     private void Update()
     {
