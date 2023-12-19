@@ -2,14 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeManager : Singleton<TimeManager>
 {
-    public int MaxTime { get; private set; } //最大時間
-    public int CurrentTime { get; private set; } //現在の時間
-    public bool IsCounting { get; private set; } //カウントが進んでいるか
+    [field: SerializeField]public float MaxTime { get; private set; } //最大時間
+    public float CurrentTime { get; private set; } //現在の時間
+    public bool IsCounting { get; set; } //カウントが進んでいるか
 
-    public Action<int> onUpdateTimeCount; //カウントが更新されたときに呼ばれるイベント
+    [SerializeField] private Text endText;
+    public Action<float> onUpdateTimeCount; //カウントが更新されたときに呼ばれるイベント
     public Action onTimeCountZero; //カウントがゼロになったときに呼ばれるイベント
 
     protected override void Awake()
@@ -17,7 +19,19 @@ public class TimeManager : Singleton<TimeManager>
         base.Awake();
 
         CurrentTime = MaxTime;
-        StartCoroutine(TimeCountCoroutine());
+    }
+
+    private void Update()
+    {
+        if (!IsCounting) return;
+        CurrentTime -= Time.deltaTime;
+        onUpdateTimeCount?.Invoke(CurrentTime);
+        if (CurrentTime <= 0)
+        {
+            onTimeCountZero?.Invoke();
+            endText.gameObject.SetActive(true);
+            IsCounting = false;
+        }
     }
 
     //カウントのスタート
@@ -32,20 +46,4 @@ public class TimeManager : Singleton<TimeManager>
         IsCounting = false;
     }
 
-    //カウントのコルーチン
-    private IEnumerator TimeCountCoroutine()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1);
-            if (!IsCounting) continue;
-            --CurrentTime;
-            onUpdateTimeCount?.Invoke(CurrentTime);
-            if (CurrentTime <= 0)
-            {
-                onTimeCountZero?.Invoke();
-                break;
-            }
-        }
-    }
 }

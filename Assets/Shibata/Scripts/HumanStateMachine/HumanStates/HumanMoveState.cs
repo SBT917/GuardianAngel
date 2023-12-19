@@ -50,8 +50,7 @@ public class HumanMoveState : HumanBaseState
 
     void UpdateAgentMovement()
     {
-        // 一定期間ごとに目的地を設定して値を初期化
-        if (stateMachine.Agent.remainingDistance <= 0)
+        if (stateMachine.Agent.remainingDistance < 5)
         {
             MoveTowardsTarget();
             ResetWalkParameters();
@@ -61,24 +60,8 @@ public class HumanMoveState : HumanBaseState
 
     void MoveTowardsTarget()
     {
-        // レイの始点
-        var sourcePos = stateMachine.transform.position;
-
-        // レイの終点
-        var targetPos = sourcePos + walkDirection * maxMoveDistance;
-
-        // レイを投げる
-        var blocked = NavMesh.Raycast(sourcePos, targetPos, out NavMeshHit hitInfo, NavMesh.AllAreas);
-
-        if (blocked)
-        {
-            // ヒット地点を目的地にする
-            stateMachine.Agent.SetDestination(hitInfo.position);
-        }
-        else
-        {
-            // ターゲット位置を目的地にする。
-            stateMachine.Agent.SetDestination(targetPos);
-        }
+        Vector3 position = HumanManager.instance.WanderingPoint[Random.Range(0, HumanManager.instance.WanderingPoint.Length)].position;
+        stateMachine.Agent.SetDestination(position);
+        
     }
 }
