@@ -7,7 +7,7 @@ using UnityEngine;
 public class Rank
 {
     public string rank;
-    public int minScore;
+    public int maxScore;
     public string comment;
 }
 
@@ -41,7 +41,7 @@ public class RankManager : MonoBehaviour
     {
         foreach (var rank in RankList.ranks)
         {
-            if(score >= rank.minScore)
+            if(score <= rank.maxScore)
             {
                 return rank;
             }
