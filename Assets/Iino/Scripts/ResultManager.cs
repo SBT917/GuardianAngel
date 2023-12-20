@@ -13,19 +13,13 @@ public class ResultManager : MonoBehaviour
     [SerializeField]
     private Text peopleHelpedNumText;
     [SerializeField]
-    private Text scoreText;
-    [SerializeField]
     private Text angelRank;
     [SerializeField]
     private Text godsComment;
 
 
     [SerializeField]
-    private int peopleHelped;
-    private int score;
-
-    [SerializeField]
-    private int debugScore;
+    private int peopleDeath;
 
     [SerializeField]
     private string nextSceneName;
@@ -41,7 +35,6 @@ public class ResultManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScoreManager.instance.AddScore(debugScore);
         LoadRank();
     }
 
@@ -57,8 +50,8 @@ public class ResultManager : MonoBehaviour
     void LoadRank()
     {
         //スコアからランクを取得
-        score = ScoreManager.instance.Score;
-        rank = RankManager.instance.GetRank(score);
+        peopleDeath = HumanManager.HumanDeathCount;
+        rank = RankManager.instance.GetRank(HumanManager.HumanDeathCount);
         UpdateResultText(rank);
     }
 
@@ -66,8 +59,7 @@ public class ResultManager : MonoBehaviour
     {
         //表記の更新
 
-        peopleHelpedNumText.text = "助けた人：" + peopleHelped.ToString() + "人";
-        scoreText.text = "最終スコア：" + score.ToString("N0");
+        peopleHelpedNumText.text = "死んだ人：" + peopleDeath.ToString() + "人";
         angelRank.text = rank.rank.ToString();
         godsComment.text = rank.comment.ToString();
     }

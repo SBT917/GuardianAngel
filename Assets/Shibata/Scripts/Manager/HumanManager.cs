@@ -5,7 +5,7 @@ using UnityEngine;
 public class HumanManager : Singleton<HumanManager>
 {
     public int HumanCount { get; set; }
-    public int HumanDeathCount { get; set; }
+    public static int HumanDeathCount { get; set; }
     [field: SerializeField] public Transform[] WanderingPoint { get; private set; }
 
     [SerializeField] private GameObject[] humansPrefabs;

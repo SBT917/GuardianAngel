@@ -2,47 +2,47 @@
   "ranks": [
     {
       "rank": "熾天使",
-      "minScore": 800,
-      "comment": ""
+      "maxScore": 0,
+      "comment": "死ね"
     },
     {
       "rank": "智天使",
-      "minScore": 700,
-      "comment": ""
+      "maxScore": 5,
+      "comment": "メリークリスマス"
     },
     {
       "rank": "座天使",
-      "minScore": 600,
+      "maxScore": 10,
       "comment": "b"
     },
     {
       "rank": "主天使",
-      "minScore": 500,
+      "maxScore": 15,
       "comment": "c"
     },
     {
       "rank": "力天使",
-      "minScore": 400,
+      "maxScore": 20,
       "comment": "d"
     },
     {
       "rank": "能天使",
-      "minScore": 300,
+      "maxScore": 25,
       "comment": "e"
     },
     {
       "rank": "権天使",
-      "minScore": 200,
-      "comment": "fu*k u b*tch"
+      "maxScore": 30,
+      "comment": "fu*k you"
     },
     {
       "rank": "大天使",
-      "minScore": 100,
+      "maxScore": 35,
       "comment": "だるw"
     },
     {
       "rank": "天使",
-      "minScore": 0,
+      "maxScore": 40,
       "comment": "カス"
     }
   ]
