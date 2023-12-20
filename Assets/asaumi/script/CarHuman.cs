@@ -33,7 +33,7 @@ public class MotionStop : MonoBehaviour
                 DeathCheck = true; 
             }
             --HumanManager.instance.HumanCount;
-            ++HumanManager.instance.HumanDeathCount;
+            ++HumanManager.HumanDeathCount;
             Destroy(gameObject);
         }
     }
