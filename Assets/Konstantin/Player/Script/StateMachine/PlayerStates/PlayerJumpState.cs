@@ -25,6 +25,7 @@ public class PlayerJumpState : PlayerBaseState
         {
             stateMachine.SwitchState(new PlayerFallState(stateMachine));
         }
+        CalculateMoveDirection();
         FaceMoveDirection();
         Move();
     }
