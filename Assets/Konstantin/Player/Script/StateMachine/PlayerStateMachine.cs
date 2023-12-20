@@ -10,7 +10,7 @@ public class PlayerStateMachine : StateMachine
 
     //‘¬“x
     public Vector3 Velocity;
-    public float MovementSpeed { get; private set; } = 5f;
+    public float MovementSpeed { get; private set; } = 10f;
     public float MovementSpeedMultiplier { get; set; }
     //ƒWƒƒƒ“ƒv—Í
     public float JumpForce { get; private set; } = 5f;
