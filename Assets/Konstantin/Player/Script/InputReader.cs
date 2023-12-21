@@ -16,6 +16,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     private Controls controls;
 
     private PlayerGrab playerGrab;
+    private float sesitivityOffset = 10.0f; 
 
     private void OnEnable()
     {
@@ -38,7 +39,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     }
     public void OnLook(InputAction.CallbackContext context)
     {
-        MouseDelta = context.ReadValue<Vector2>();
+        MouseDelta.x = -context.ReadValue<Vector2>().x/sesitivityOffset;
+        MouseDelta.y = -context.ReadValue<Vector2>().y/sesitivityOffset;
     }
     public void OnMove(InputAction.CallbackContext context)
     {
