@@ -41,7 +41,7 @@ public class RankManager : MonoBehaviour
     {
         foreach (var rank in RankList.ranks)
         {
-            if(score <= rank.maxScore)
+            if(score >= rank.maxScore)
             {
                 return rank;
             }
