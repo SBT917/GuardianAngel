@@ -5,19 +5,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-[CreateAssetMenu(fileName = "CarData",menuName ="ScriptableObjects/CarData",order =1)]
-public class CarData : ScriptableObject
-{
-    public GameObject CarPrefab;
-    public float weight;
-}
-
-
 
 public class CarSpawner : Singleton<CarSpawner>
 {
     [SerializeField]
-    private List<CarData> cars;
+    private List<GameObject> cars;
 
     [SerializeField]
     private Vector3 carSpawnPoint;
@@ -86,7 +78,7 @@ public class CarSpawner : Singleton<CarSpawner>
                 carCount++;
 
 
-                var newCar = Instantiate(SelectCar(), carSpawnPoint, Quaternion.identity);
+                var newCar = Instantiate(cars[Random.Range(0,cars.Count)], carSpawnPoint, Quaternion.identity);
                 var carPatrol = newCar.GetComponent<CarPatrol>();
                 canSpawn = true; // ê∂ê¨Ç™äÆóπÇµÇΩÇÁÉtÉâÉOÇÉIÉìÇ…Ç∑ÇÈ
                 carGenQueue--;
@@ -95,28 +87,4 @@ public class CarSpawner : Singleton<CarSpawner>
         generatingCar= false;
     }
 
-
-    private GameObject SelectCar()
-    {
-        float totalWeight = 0;
-        foreach (CarData carData in cars)
-        {
-            totalWeight += carData.weight;
-        }
-
-        float randomNum = Random.Range(0f, totalWeight);
-        foreach (CarData carData in cars)
-        {
-            if (randomNum < carData.weight)
-            {
-                return carData.CarPrefab;
-            }
-            else
-            {
-                randomNum -= carData.weight;
-            }
-        }
-        
-        return cars[0].CarPrefab;
-    }
 }
