@@ -26,6 +26,8 @@ public class HumanStateMachine : StateMachine, IGrabbable
     public GameObject Grabbed()
     {
         Collider.enabled = false;
+        Rigidbody.useGravity = false;
+        Agent.enabled = false;
         SwitchState(new HumanGrabbingState(this));
         return gameObject;
     }
@@ -36,7 +38,6 @@ public class HumanStateMachine : StateMachine, IGrabbable
         Rigidbody.useGravity = true;
         Vector3 vel = direction * force;
         Rigidbody.AddForce(vel, ForceMode.Impulse);
-        SwitchState(new HumanMoveState(this));
     }
 
 }

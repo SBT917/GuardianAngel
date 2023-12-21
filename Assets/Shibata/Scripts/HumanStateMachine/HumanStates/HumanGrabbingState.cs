@@ -23,6 +23,11 @@ public class HumanGrabbingState : HumanBaseState
 
     public override void Tick()
     {
-        
+        Debug.Log(stateMachine.Rigidbody.velocity.y);
+
+        if(stateMachine.Collider.enabled)
+        {
+            stateMachine.SwitchState(new HumanMoveState(stateMachine));
+        }
     }
 }
