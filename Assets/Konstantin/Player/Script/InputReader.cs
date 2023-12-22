@@ -39,8 +39,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     }
     public void OnLook(InputAction.CallbackContext context)
     {
-        MouseDelta.x = -context.ReadValue<Vector2>().x/sesitivityOffset;
-        MouseDelta.y = -context.ReadValue<Vector2>().y/sesitivityOffset;
+        MouseDelta.x = context.ReadValue<Vector2>().x/sesitivityOffset;
+        MouseDelta.y = context.ReadValue<Vector2>().y/sesitivityOffset;
     }
     public void OnMove(InputAction.CallbackContext context)
     {

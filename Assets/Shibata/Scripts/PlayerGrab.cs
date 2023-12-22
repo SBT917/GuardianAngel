@@ -53,20 +53,11 @@ public class PlayerGrab : MonoBehaviour
         if (GrabbingObject == null) return;
 
         Vector3 targetPos;
-        if (stateMachine.GetState().GetType().Equals(typeof(PlayerFlyState)))
-        {
-            targetPos = transform.position + transform.up;
-            //targetPos.y = transform.position.y - 2;
-        }
-        else
-        {
-            targetPos = transform.position + transform.forward * followPosOffset;
-            targetPos.y += 1;
-        }
+        targetPos = transform.position + Vector3.up * followPosOffset;
 
 
         Vector3 moveDirection = (targetPos - GrabbingObject.transform.position).normalized;
-        if (Vector3.Distance(targetPos, GrabbingObject.transform.position) > 2)
+        if (Vector3.Distance(targetPos, GrabbingObject.transform.position) > 0.5f)
         {
             GrabbingObject.transform.position += moveDirection * followSpeed * Time.deltaTime;
 
