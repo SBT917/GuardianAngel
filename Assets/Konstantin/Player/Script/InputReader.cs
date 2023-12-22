@@ -60,7 +60,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         }
         else
         {
-            playerGrab.Release();
+            playerGrab.Release(100);
         }
     }
     public void OnFly(InputAction.CallbackContext context)

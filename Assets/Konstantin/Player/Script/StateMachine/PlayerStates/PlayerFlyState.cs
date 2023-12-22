@@ -21,6 +21,7 @@ public class PlayerFlyState : PlayerBaseState
     {
         stateMachine.Animator.CrossFadeInFixedTime(FlyHash, CrossFadeDuration);
         stateMachine.InputReader.OnJumpPerformed += SwitchToFallState;
+        stateMachine.GrabComponent.Release(0);
     }
     public override void Tick()
     {

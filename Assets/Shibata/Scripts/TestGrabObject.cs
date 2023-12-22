@@ -12,10 +12,12 @@ public class TestGrabObject :MonoBehaviour, IGrabbable
         TryGetComponent(out rb);
     }
 
-    public GameObject Grabbed()
+    public GameObject Grabbed(out float offset)
     {
         Debug.Log(gameObject.name + "‚ª’Í‚Ü‚ê‚½");
         col.enabled = false;
+        rb.useGravity = false;
+        offset = 4;
         return gameObject;
     }
 

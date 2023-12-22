@@ -23,11 +23,12 @@ public class HumanStateMachine : StateMachine, IGrabbable
         SwitchState(new HumanMoveState(this));
     }
 
-    public GameObject Grabbed()
+    public GameObject Grabbed(out float offset)
     {
         Collider.enabled = false;
         Rigidbody.useGravity = false;
         Agent.enabled = false;
+        offset = 3.0f;
         SwitchState(new HumanGrabbingState(this));
         return gameObject;
     }
