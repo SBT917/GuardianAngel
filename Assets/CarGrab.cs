@@ -9,20 +9,19 @@ public class CarGrab : MonoBehaviour,IGrabbable
     CarPatrol carPatrol;
     Collider col;
     Rigidbody rb;
-    float preMass;
     private void Start()
     {
         carPatrol = GetComponent<CarPatrol>();
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
     }
-    public GameObject Grabbed()
+    public GameObject Grabbed(out float offset)
     {
+        offset = 5f;
         carPatrol.Invalid();
         col.enabled = false;
         rb.useGravity = false;
-        preMass = rb.mass;
-        rb.mass = 1;
+        rb.velocity = Vector3.zero;
         return this.gameObject;
     }
 
@@ -30,7 +29,7 @@ public class CarGrab : MonoBehaviour,IGrabbable
     {
         col.enabled = true;
         rb.useGravity = true;
-        rb.mass = preMass;
-        rb.AddForce(direction * force, ForceMode.Impulse);
+        rb.AddForce(direction * force * 10, ForceMode.Impulse);
     }
+
 }
