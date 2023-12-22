@@ -23,6 +23,7 @@ public class CarTagInteraction : MonoBehaviour
         {
             if(!wasClashed)
             {
+                GetComponent<Renderer>().material.color = new Color(0.15f, 0.15f, 0.15f,0.8f);
                 CarPatrol carPatrol = GetComponent<CarPatrol>();
                 carPatrol.Invalid();
                 CarSpawner.instance.DecreasedCar();
@@ -32,14 +33,16 @@ public class CarTagInteraction : MonoBehaviour
                     Destroy(gameObject, 10f);
                 }
                 wasClashed = true;
-            }
-            
-            Instantiate(ClashEffect, transform.position, Quaternion.identity);
-            Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
-            Vector3 pushDirection = Random.onUnitSphere;
-            float force = Random.Range(minForce, maxForce);
-            rb.AddForce(pushDirection * force, ForceMode.Impulse);
 
+                Instantiate(ClashEffect, transform.position, Quaternion.identity);
+                Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+                Vector3 pushDirection = Random.onUnitSphere;
+                float force = Random.Range(minForce, maxForce);
+                rb.AddForce(pushDirection * force, ForceMode.Impulse);
+                this.gameObject.layer = 7;
+
+                GetComponent<CarGrab>().enabled = false;
+            }
         }
     }
 }

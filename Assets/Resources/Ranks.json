@@ -1,14 +1,34 @@
 {
   "ranks": [
     {
-      "rank": "熾天使",
-      "maxScore": 0,
+      "rank": "天使",
+      "maxScore": 35,
       "comment": "なんじゃこいつはキモいのう\nワシの走馬灯に現れないのを祈るばかりじゃ"
     },
     {
-      "rank": "智天使",
-      "maxScore": 1,
-      "comment": "これくらいなら死んでも死んでなくても変わらんじゃろ"
+      "rank": "大天使",
+      "maxScore": 30,
+      "comment": "WASDで歩けるのじゃ"
+    },
+    {
+      "rank": "権天使",
+      "maxScore": 25,
+      "comment": "はなから殺す気だグいのじゃ"
+    },
+    {
+      "rank": "能天使",
+      "maxScore": 20,
+      "comment": "人参ゾンビは危険なのじゃよ～♪"
+    },
+    {
+      "rank": "力天使",
+      "maxScore": 15,
+      "comment": "パーティ閉じじゃ"
+    },
+    {
+      "rank": "主天使",
+      "maxScore": 10,
+      "comment": "(^_-)-☆"
     },
     {
       "rank": "座天使",
@@ -16,34 +36,19 @@
       "comment": "まあ、許容範囲じゃな"
     },
     {
-      "rank": "主天使",
-      "maxScore": 10,
-      "comment": "ネタ切れじゃ"
+      "rank": "智天使",
+      "maxScore": 3,
+      "comment": "これくらいなら死んでも死んでなくても変わらんじゃろ"
     },
     {
-      "rank": "力天使",
-      "maxScore": 15,
-      "comment": ""
+      "rank": "熾天使",
+      "maxScore": 3,
+      "comment": "あともう一息じゃ"
     },
     {
-      "rank": "能天使",
-      "maxScore": 20,
-      "comment": ""
-    },
-    {
-      "rank": "権天使",
-      "maxScore": 25,
-      "comment": ""
-    },
-    {
-      "rank": "大天使",
-      "maxScore": 30,
-      "comment": ""
-    },
-    {
-      "rank": "天使",
-      "maxScore": 35,
-      "comment": "なんじゃこいつはキモいのう\nワシの走馬灯に現れないのを祈るばかりじゃ"
+      "rank": "熾天使",
+      "maxScore": 0,
+      "comment": "お前チーターだろ"
     }
   ]
 }
