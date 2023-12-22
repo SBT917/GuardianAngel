@@ -21,7 +21,7 @@ public class HumanMoveState : HumanBaseState
 
     public override void Enter()
     {
-        stateMachine.Agent.enabled = true;
+        stateMachine.Agent.isStopped = false;
         stateMachine.Agent.speed = stateMachine.MovementSpeed;
         stateMachine.Animator.CrossFadeInFixedTime(MoveHash, CrossFadeDuration);
 
@@ -30,7 +30,7 @@ public class HumanMoveState : HumanBaseState
 
     public override void Exit()
     {
-        stateMachine.Agent.enabled = false;
+        
     }
 
     public override void Tick()
