@@ -6,8 +6,9 @@ public class PlayerGrab : MonoBehaviour
 {
     private PlayerStateMachine stateMachine;
     private IGrabbable grabbable;
-    [SerializeField]
     private float followSpeed;
+    private float followPosOffset;
+    [SerializeField] private GameObject aimingUi;
 
     public GameObject GrabbingObject { get; private set; }
 
@@ -27,23 +28,23 @@ public class PlayerGrab : MonoBehaviour
         if (GrabbingObject != null) return;
 
         RaycastHit hit;
-        Vector3 direction = stateMachine.GetState().GetType() == typeof(PlayerFlyState) ? 
-                            transform.TransformDirection(Vector3.down) : transform.TransformDirection(Vector3.forward);
+        Vector3 direction = transform.TransformDirection(Vector3.forward);
         if (Physics.BoxCast(transform.position, Vector3.one, direction, out hit, Quaternion.identity, 1f))
         {
             if (hit.transform.TryGetComponent(out grabbable))
             {
-                GrabbingObject = grabbable.Grabbed();
+                GrabbingObject = grabbable.Grabbed(out followPosOffset);
+                aimingUi.gameObject.SetActive(true);
             }
         }
     }
 
-    public void Release()
+    public void Release(float force)
     {
         if (GrabbingObject == null) return;
 
-        grabbable.Release(stateMachine.GetState().GetType() == typeof(PlayerFlyState) ?
-                            transform.TransformDirection(Vector3.down) : transform.TransformDirection(Vector3.forward), 100);
+        grabbable.Release(stateMachine.MainCamera.transform.forward, force);
+        aimingUi.gameObject.SetActive(false);
         GrabbingObject = null;
     }
 
@@ -59,7 +60,7 @@ public class PlayerGrab : MonoBehaviour
         }
         else
         {
-            targetPos = transform.position + transform.forward * 3;
+            targetPos = transform.position + transform.forward * followPosOffset;
             targetPos.y += 1;
         }
 

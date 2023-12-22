@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IGrabbable
 {
-    public GameObject Grabbed();
+    public GameObject Grabbed(out float offset);
 
     public void Release(Vector3 direction, float force);
 }
