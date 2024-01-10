@@ -55,7 +55,6 @@ public class PlayerGrab : MonoBehaviour
         Vector3 targetPos;
         targetPos = transform.position + Vector3.up * followPosOffset;
 
-
         Vector3 moveDirection = (targetPos - GrabbingObject.transform.position).normalized;
         if (Vector3.Distance(targetPos, GrabbingObject.transform.position) > 0.5f)
         {
