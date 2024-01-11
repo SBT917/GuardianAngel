@@ -20,21 +20,13 @@ public class MotionStop : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag=="Car")
+        if (collision.gameObject.tag == "Car")
         {
-            // 衝突が発生したらアニメーターを停止
-            animator.enabled = false;
-            collisionOccurred = true;
-           
-            Debug.Log("判定あり");
-            if (DeathCheck == false)
+            if (collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0.1)
             {
-                Instantiate(DeathHuman, collision.contacts[0].point, Quaternion.identity);
-                DeathCheck = true; 
+                // 衝突が発生したらアニメーターを停止
+                Death();
             }
-            --HumanManager.instance.HumanCount;
-            ++HumanManager.HumanDeathCount;
-            Destroy(gameObject);
         }
     }
     private void Update()
@@ -43,6 +35,23 @@ public class MotionStop : MonoBehaviour
         {
             // 5秒後にDestroyメソッドを呼び出し、このオブジェクトを破棄する
             Destroy(gameObject, 5f);
+        }
+    }
+
+    public void Death()
+    {
+        if (!DeathCheck)
+        {
+            animator.enabled = false;
+            collisionOccurred = true;
+
+            Debug.Log("判定あり");
+            var cadaver = Instantiate(DeathHuman, transform.position, Quaternion.identity);
+            --HumanManager.instance.HumanCount;
+            ++HumanManager.HumanDeathCount;
+            Destroy(gameObject);
+
+            DeathCheck = true;
         }
     }
 }
