@@ -9,6 +9,12 @@ public class CarGrab : MonoBehaviour,IGrabbable
     CarPatrol carPatrol;
     Collider col;
     Rigidbody rb;
+
+    [SerializeField]
+    float throwingForce = 15;
+
+    [SerializeField]
+    float grabbingOffset = 5;
     private void Start()
     {
         carPatrol = GetComponent<CarPatrol>();
@@ -17,7 +23,7 @@ public class CarGrab : MonoBehaviour,IGrabbable
     }
     public GameObject Grabbed(out float offset)
     {
-        offset = 5f;
+        offset = grabbingOffset;
         carPatrol.Invalid();
         col.enabled = false;
         rb.useGravity = false;
@@ -29,7 +35,7 @@ public class CarGrab : MonoBehaviour,IGrabbable
     {
         col.enabled = true;
         rb.useGravity = true;
-        rb.AddForce(direction * force * 10, ForceMode.Impulse);
+        rb.AddForce(direction * force * 15, ForceMode.Impulse);
     }
 
 }

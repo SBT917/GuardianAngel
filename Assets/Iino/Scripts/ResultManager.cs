@@ -43,6 +43,9 @@ public class ResultManager : MonoBehaviour
     {
         if (_pressAnyKeyAction.triggered)
         {
+            //カウントをリセット
+            HumanManager.HumanDeathCount = 0;
+
             SceneManager.LoadScene(nextSceneName);
         }
     }
