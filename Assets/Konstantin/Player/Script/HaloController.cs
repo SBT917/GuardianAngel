@@ -20,7 +20,7 @@ public class HaloController : MonoBehaviour
         if(currentScore != HumanManager.HumanDeathCount) 
         {
             float colorChange = 1 - currentScore * colorChangeMultiplier;
-            haloMaterial.SetColor("_Color", new Color(1f, colorChange,0f,1f));
+            haloMaterial.SetColor("_Color", new Color(colorChange, colorChange,0f,1f));
             currentScore = HumanManager.HumanDeathCount;
             Debug.Log(colorChange);
         }
