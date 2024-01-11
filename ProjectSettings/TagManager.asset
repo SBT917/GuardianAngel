@@ -9,6 +9,7 @@ TagManager:
   - Ball
   - Car
   - Clashed
+  - CarHuman
   layers:
   - Default
   - TransparentFX
