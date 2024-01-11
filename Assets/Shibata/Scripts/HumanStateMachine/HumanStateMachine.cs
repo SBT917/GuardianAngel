@@ -37,8 +37,8 @@ public class HumanStateMachine : StateMachine, IGrabbable
     {
         Collider.enabled = true;
         Rigidbody.useGravity = true;
-        Vector3 vel = direction * force;
-        Rigidbody.AddForce(vel, ForceMode.Impulse);
+        Agent.enabled = true;
+        SwitchState(new HumanIdleState(this));
     }
 
 }
