@@ -22,7 +22,8 @@ public class FallPointMarker : MonoBehaviour
 
     private void Start()
     {
-        defaultDistance = Vector3.Distance(gameObject.transform.position, ParentMeteor.transform.position);
+        distance = Vector3.Distance(gameObject.transform.position, ParentMeteor.transform.position);
+        defaultDistance = distance;
         endColor.a = 0;
         burnedColor = Color.white;
         transform.eulerAngles = new Vector3(-90, 0, 0);
@@ -31,8 +32,9 @@ public class FallPointMarker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(ParentMeteor != null)
+        if (distance >= 10)
         {
+            if (ParentMeteor == null) { Destroy(gameObject); return; }
             distance = Vector3.Distance(gameObject.transform.position, ParentMeteor.transform.position);
             endColor.a = 1 - distance / defaultDistance;
             spriteRenderer.color = endColor;
