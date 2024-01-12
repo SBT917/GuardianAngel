@@ -5,8 +5,7 @@ using UnityEngine.UIElements;
 
 public class TouchedDestroyer : MonoBehaviour
 {
-    [SerializeField]
-    string[] DestroyTags;
+
 
     private Vector3 spawnPoint = new Vector3(-40, 40, -40);
 
@@ -16,15 +15,14 @@ public class TouchedDestroyer : MonoBehaviour
         switch(objTag)
         {
             case "Car":
-            case "Human":
                 Destroy(other.gameObject);
                 break;
             case "Player":
                 //Debug.Log("player entered water");
+                other.GetComponent<PlayerGrab>().Release(0);
                 other.GetComponent<Transform>().position = spawnPoint;
                 break;
             default:
-                Debug.Log("Untaged item in water");
                 break;
         }
 
