@@ -17,12 +17,20 @@ public class HaloController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentScore != HumanManager.HumanDeathCount) 
+        if (currentScore != HumanManager.HumanDeathCount)
         {
             float colorChange = 1 - currentScore * colorChangeMultiplier;
-            haloMaterial.SetColor("_Color", new Color(colorChange, colorChange,0f,1f));
+            if (colorChange > 0)
+            {
+                haloMaterial.SetColor("_Color", new Color(colorChange, colorChange, 0f, 1f));
+               
+            }
+            else
+            {
+                haloMaterial.SetColor("_Color", new Color(0f, 0f, 0f, 1f));
+
+            }
             currentScore = HumanManager.HumanDeathCount;
-            Debug.Log(colorChange);
         }
     }
 }
