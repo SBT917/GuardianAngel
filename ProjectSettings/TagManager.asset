@@ -11,6 +11,7 @@ TagManager:
   - Clashed
   - Medical
   - death
+  - Human
   layers:
   - Default
   - TransparentFX
