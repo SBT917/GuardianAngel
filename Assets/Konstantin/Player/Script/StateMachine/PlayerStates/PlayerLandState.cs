@@ -13,7 +13,7 @@ public class PlayerLandState : PlayerBaseState
 
     public PlayerLandState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
-        Debug.Log("land state enter");
+        //Debug.Log("land state enter");
     }
     public override async void Enter()
     {

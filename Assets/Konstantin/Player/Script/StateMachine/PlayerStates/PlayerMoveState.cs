@@ -11,7 +11,7 @@ public class PlayerMoveState : PlayerBaseState
 
     public PlayerMoveState(PlayerStateMachine stateMachine):base(stateMachine)
     {
-        Debug.Log("move state enter");
+        //Debug.Log("move state enter");
     }
     public override void Enter()
     {
