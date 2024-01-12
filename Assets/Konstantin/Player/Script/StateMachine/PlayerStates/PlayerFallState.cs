@@ -9,7 +9,7 @@ public class PlayerFallState : PlayerBaseState
 
     public PlayerFallState(PlayerStateMachine stateMachine): base(stateMachine) 
     {
-        Debug.Log("fall state enter");
+        //Debug.Log("fall state enter");
     }
 
     public override void Enter()

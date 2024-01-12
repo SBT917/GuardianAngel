@@ -1750,7 +1750,7 @@ Transform:
   - {fileID: 3701587315725027315}
   - {fileID: 4573274795210428902}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5203326387668254155
 Animator:
@@ -1841,7 +1841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ddba10dfa0bf247ab8085502db27b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followSpeed: 5
+  aimingUi: {fileID: 0}
 --- !u!136 &6241061183027659278
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3121,6 +3121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 27581030150807652}
   - component: {fileID: 2579611983200769719}
+  - component: {fileID: 6593944223818671770}
   m_Layer: 0
   m_Name: halo.001
   m_TagString: Untagged
@@ -3163,7 +3164,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5718282819047315680, guid: 4774b4afd58236543bff85319f84fe6a, type: 3}
+  - {fileID: 2100000, guid: febc2a457e74a984db02173767301e8f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3261,6 +3262,20 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 3.886253, z: -0.013812125}
     m_Extent: {x: 0.5831849, y: 0.04736066, z: 0.5831848}
   m_DirtyAABB: 0
+--- !u!114 &6593944223818671770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963185293248404129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f57853f6e65d3c408a4cd7df0ea5d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorChangeMultiplier: 0.1
+  haloMaterial: {fileID: 2100000, guid: febc2a457e74a984db02173767301e8f, type: 2}
 --- !u!1 &8100865521891310842
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class PlayerJumpState : PlayerBaseState
 
     public PlayerJumpState(PlayerStateMachine stateMachine):base(stateMachine)
     {
-        Debug.Log("jump state enter");
+        //Debug.Log("jump state enter");
     }
 
     public override void Enter()
