@@ -14,7 +14,7 @@ public class PlayerFlyState : PlayerBaseState
 
     public PlayerFlyState(PlayerStateMachine stateMachine):base(stateMachine)
     {
-        Debug.Log("fly state enter");
+        //Debug.Log("fly state enter");
     }
 
     public override void Enter()

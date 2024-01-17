@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 236054bce784c9c4fbec7de6bb37b7ec, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 236054bce784c9c4fbec7de6bb37b7ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 236054bce784c9c4fbec7de6bb37b7ec, type: 3}
       propertyPath: m_TagString
-      value: CarHuman
+      value: Human
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 236054bce784c9c4fbec7de6bb37b7ec, type: 3}
       propertyPath: m_Controller
@@ -156,7 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathHuman: {fileID: 5045263310802468985, guid: 0ca2bdafa8128cc43b5f95b08fe8cb69, type: 3}
-  Zombie: {fileID: 3812971640825089346, guid: c5d36fe8a9e70b943bbc75412084cc1e, type: 3}
 --- !u!114 &2028668779843458911
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,29 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class TouchedDestroyer : MonoBehaviour
 {
-    [SerializeField]
-    string[] DestroyTags;
+
+
+    private Vector3 spawnPoint = new Vector3(-40, 40, -40);
 
     private void OnTriggerEnter(Collider other)
     {
         var objTag = other.gameObject.tag;
-        if(ChackTag(objTag))
+        switch(objTag)
         {
-            Destroy(other.gameObject);
+            case "Car":
+                Destroy(other.gameObject);
+                break;
+            case "Player":
+                //Debug.Log("player entered water");
+                other.GetComponent<PlayerGrab>().Release(0);
+                other.GetComponent<Transform>().position = spawnPoint;
+                break;
+            default:
+                break;
         }
+
     }
 
-    private bool ChackTag(string objTag)
-    {
-        for (int i = 0; i < DestroyTags.Length; i++)
-        {
-            objTag = DestroyTags[i];
-            return true;
-        }
-
-        return false;
-    }
 }
