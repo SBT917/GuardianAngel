@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class MotionStop : MonoBehaviour
+public class CarHuman : MonoBehaviour
 {
     private HumanStateMachine stateMachine;
     private Animator animator;
     private bool collisionOccurred = false;
     public GameObject DeathHuman;
+    public GameObject Zombie;
     bool DeathCheck;
 
     void Start()
@@ -47,6 +48,22 @@ public class MotionStop : MonoBehaviour
 
             Debug.Log("”»’è‚ ‚è");
             var cadaver = Instantiate(DeathHuman, transform.position, Quaternion.identity);
+            --HumanManager.instance.HumanCount;
+            ++HumanManager.HumanDeathCount;
+            Destroy(gameObject);
+
+            DeathCheck = true;
+        }
+    }
+    public void ChangeZombie()
+    {
+        if (!DeathCheck)
+        {
+            animator.enabled = false;
+            collisionOccurred = true;
+
+            Debug.Log("”»’è‚ ‚è");
+            var cadaver = Instantiate(Zombie, transform.position, Quaternion.identity);
             --HumanManager.instance.HumanCount;
             ++HumanManager.HumanDeathCount;
             Destroy(gameObject);
