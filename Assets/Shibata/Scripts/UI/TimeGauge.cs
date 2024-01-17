@@ -11,6 +11,9 @@ public class TimeGauge : MonoBehaviour
     {
         TryGetComponent(out image);
         TimeManager.instance.onUpdateTimeCount += UpdateTimeGauge;
+
+        //TryGetComponent(out RectTransform rect);
+        //rect.position = new Vector3(rect.position.x, -50, rect.position.z);
     }
 
     private void UpdateTimeGauge(float time)
