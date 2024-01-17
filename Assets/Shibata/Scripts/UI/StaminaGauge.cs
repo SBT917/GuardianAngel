@@ -20,6 +20,8 @@ public class StaminaGauge : MonoBehaviour
         slider.value = slider.maxValue;
         fill.color = staminaDefaultColor;
         stateMachine.onChangeStamina += UpdateValue;
+        //TryGetComponent(out RectTransform rect);
+        //rect.position = new Vector3(rect.position.x, -50, rect.position.z);
     }
 
     void UpdateValue(float value)

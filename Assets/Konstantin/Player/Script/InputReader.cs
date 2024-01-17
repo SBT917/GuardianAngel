@@ -16,7 +16,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     private Controls controls;
 
     private PlayerGrab playerGrab;
-    private float sesitivityOffset = 10.0f; 
+    private float sesitivityOffset = 10.0f;
 
     private void OnEnable()
     {
@@ -25,7 +25,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         controls.Player.SetCallbacks(this);
         controls.Player.Enable();
 
-        TryGetComponent(out playerGrab);  
+        TryGetComponent(out playerGrab);
     }
 
     private void Start()
@@ -39,8 +39,8 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     }
     public void OnLook(InputAction.CallbackContext context)
     {
-        MouseDelta.x = context.ReadValue<Vector2>().x/sesitivityOffset;
-        MouseDelta.y = context.ReadValue<Vector2>().y/sesitivityOffset;
+        MouseDelta.x = context.ReadValue<Vector2>().x / sesitivityOffset;
+        MouseDelta.y = context.ReadValue<Vector2>().y / sesitivityOffset;
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -48,7 +48,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(!context.performed) return;
+        if (!context.performed) return;
         OnJumpPerformed?.Invoke();
     }
     public void OnUse(InputAction.CallbackContext context)
@@ -56,7 +56,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         if (!context.performed) return;
 
 
-        if(playerGrab.GrabbingObject == null)
+        if (playerGrab.GrabbingObject == null)
         {
             playerGrab.Grab();
         }
@@ -68,5 +68,15 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public void OnFly(InputAction.CallbackContext context)
     {
         Altitude = context.ReadValue<float>();
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (!GameManager.instance.IsPaused)
+        {
+            GameManager.instance.PauseGame();
+            return;
+        }
+        GameManager.instance.ResumeGame();
     }
 }
