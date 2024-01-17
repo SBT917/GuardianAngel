@@ -46,7 +46,7 @@ public class ChaseEnemy : MonoBehaviour
     void FindNewTarget()
     {
         // CarHumanオブジェクトを検索し、ランダムに一つ選択
-        GameObject[] carHumans = GameObject.FindGameObjectsWithTag("CarHuman");
+        GameObject[] carHumans = GameObject.FindGameObjectsWithTag("Human");
         if (carHumans.Length > 0)
         {
             targetCarHuman = carHumans[Random.Range(0, carHumans.Length)];
