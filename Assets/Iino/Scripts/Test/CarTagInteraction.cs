@@ -52,7 +52,7 @@ public class CarTagInteraction : MonoBehaviour
 
                 if(isDropItem)
                 {
-                    DropItem(3);
+                    DropItem(Random.Range(1,4));
                 }
             }
         }
