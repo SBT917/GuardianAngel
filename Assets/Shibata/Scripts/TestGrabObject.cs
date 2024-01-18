@@ -17,7 +17,7 @@ public class TestGrabObject :MonoBehaviour, IGrabbable
         Debug.Log(gameObject.name + "‚ª’Í‚Ü‚ê‚½");
         col.enabled = false;
         rb.useGravity = false;
-        offset = 2;
+        offset = 3;
         return gameObject;
     }
 
