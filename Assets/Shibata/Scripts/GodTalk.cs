@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class GodTalk : MonoBehaviour
@@ -8,6 +9,7 @@ public class GodTalk : MonoBehaviour
     [SerializeField] private Text text;
     [SerializeField] private string[] texts;
     [SerializeField] private string[] explainTexts;
+    [SerializeField] private string[] explainTextsKeyboard;
     [SerializeField] private float autoTalkSpan;
 
     private char[] chars;
@@ -15,14 +17,15 @@ public class GodTalk : MonoBehaviour
 
     void Start()
     {
-        coroutine = StartCoroutine(ExplainTalkCoroutine());
+        if(Gamepad.current!=null) coroutine = StartCoroutine(ExplainTalkCoroutine(explainTexts));
+        else coroutine = StartCoroutine(ExplainTalkCoroutine(explainTextsKeyboard));
     }
 
-    IEnumerator ExplainTalkCoroutine()
+    IEnumerator ExplainTalkCoroutine(string[] explainText)
     {
-        for(int i = 0; i < explainTexts.Length; i++)
+        for(int i = 0; i < explainText.Length; i++)
         {
-            chars = explainTexts[i].ToCharArray();
+            chars = explainText[i].ToCharArray();
             for (int j = 0; j < chars.Length; j++)
             {
                 text.text += chars[j];
