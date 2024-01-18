@@ -10,7 +10,6 @@ public class RevivalItem : MonoBehaviour
     public LayerMask targetLayer;
     public float detectionRadius = 5f;
 
-    [HideInInspector]
     public bool alreadyThrowing;
 
     [SerializeField]
@@ -19,7 +18,7 @@ public class RevivalItem : MonoBehaviour
     private void Start()
     {
         itemGrab = GetComponent<ItemGrab>();
-        itemGrab.OnItemThrown += OnThrow;
+        if (itemGrab != null) { itemGrab.OnItemThrown += OnThrow; }
     }
 
     private void OnCollisionEnter(Collision collision)
