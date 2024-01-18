@@ -450,5 +450,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20af5be1c62b18f4b988b05ed821fa57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwingForce: 15
-  grabbingOffset: 5
+  throwingForce: 0.3
+  grabbingOffset: 3

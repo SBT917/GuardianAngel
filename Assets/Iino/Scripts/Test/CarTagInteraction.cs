@@ -41,7 +41,7 @@ public class CarTagInteraction : MonoBehaviour
                 }
                 wasClashed = true;
 
-                Instantiate(ClashEffect, transform.position, Quaternion.identity);
+                EffectManager.instance.PlayEffect(0, transform.position);
                 Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
                 Vector3 pushDirection = Random.onUnitSphere;
                 float force = Random.Range(minForce, maxForce);
