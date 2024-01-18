@@ -20,6 +20,7 @@ public class HumanRevival : MonoBehaviour
 
     public void Revive()
     {
+        EffectManager.instance.PlayEffect(4, new Vector3(transform.position.x, initYpos + 2, transform.position.z));
         if(alreadyRevived) return;
         alreadyRevived = true;
         ++HumanManager.instance.HumanCount;

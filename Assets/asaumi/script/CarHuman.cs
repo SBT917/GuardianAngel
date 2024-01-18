@@ -50,6 +50,8 @@ public class CarHuman : MonoBehaviour
             var cadaver = Instantiate(DeathHuman, transform.position, Quaternion.identity);
             --HumanManager.instance.HumanCount;
             ++HumanManager.HumanDeathCount;
+            var effectPos = transform.position + new Vector3(0, 1, 0);
+            EffectManager.instance.PlayEffect(5, effectPos);
             Destroy(gameObject);
 
             DeathCheck = true;

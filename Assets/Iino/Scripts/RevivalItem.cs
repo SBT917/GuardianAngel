@@ -43,6 +43,7 @@ public class RevivalItem : MonoBehaviour
                     col.gameObject.transform.root.gameObject.GetComponent<HumanRevival>().Revive();
                 }
             }
+            EffectManager.instance.PlayEffect(2,transform.position);
             if (IsDestroyAfterRevive) { Destroy(gameObject); }
         }
     }

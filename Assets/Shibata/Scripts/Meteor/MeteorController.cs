@@ -39,7 +39,7 @@ public class MeteorController : MonoBehaviour
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point;
 
-        Instantiate(explodeEffect, pos, rot);
+        EffectManager.instance.PlayEffect(1, pos, rot);
         Destroy(gameObject);
     }
 
