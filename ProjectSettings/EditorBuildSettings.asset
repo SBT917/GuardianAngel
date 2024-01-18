@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Iino/Scene/TitleScene.unity
     guid: fd5f25d0d51f1034d848a8f9c603e093
   - enabled: 1
+    path: Assets/Shibata/Scenes/TutorialScene.unity
+    guid: 428c11640ce8c7848a05baa1e9acd401
+  - enabled: 1
     path: Assets/Iino/Scene/Map.unity
     guid: d19c47fba41e99f4e8855f02671a4d92
   - enabled: 1

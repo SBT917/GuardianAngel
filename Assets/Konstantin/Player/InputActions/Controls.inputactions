@@ -337,6 +337,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Tutorial",
+            "id": "d8bf0195-6be4-447d-89b5-0416b11cf6e4",
+            "actions": [
+                {
+                    "name": "Text",
+                    "type": "Button",
+                    "id": "df38f12d-d755-45a5-a1c9-f738bc08852e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c7ded5d6-8627-4b07-b6c4-1d4b8e62f716",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Text",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

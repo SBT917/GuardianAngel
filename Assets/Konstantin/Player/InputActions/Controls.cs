@@ -359,6 +359,34 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Tutorial"",
+            ""id"": ""d8bf0195-6be4-447d-89b5-0416b11cf6e4"",
+            ""actions"": [
+                {
+                    ""name"": ""Text"",
+                    ""type"": ""Button"",
+                    ""id"": ""df38f12d-d755-45a5-a1c9-f738bc08852e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c7ded5d6-8627-4b07-b6c4-1d4b8e62f716"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Text"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -399,6 +427,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Use = m_Player.FindAction("Use", throwIfNotFound: true);
         m_Player_Fly = m_Player.FindAction("Fly", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        // Tutorial
+        m_Tutorial = asset.FindActionMap("Tutorial", throwIfNotFound: true);
+        m_Tutorial_Text = m_Tutorial.FindAction("Text", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -542,6 +573,52 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Tutorial
+    private readonly InputActionMap m_Tutorial;
+    private List<ITutorialActions> m_TutorialActionsCallbackInterfaces = new List<ITutorialActions>();
+    private readonly InputAction m_Tutorial_Text;
+    public struct TutorialActions
+    {
+        private @Controls m_Wrapper;
+        public TutorialActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Text => m_Wrapper.m_Tutorial_Text;
+        public InputActionMap Get() { return m_Wrapper.m_Tutorial; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TutorialActions set) { return set.Get(); }
+        public void AddCallbacks(ITutorialActions instance)
+        {
+            if (instance == null || m_Wrapper.m_TutorialActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_TutorialActionsCallbackInterfaces.Add(instance);
+            @Text.started += instance.OnText;
+            @Text.performed += instance.OnText;
+            @Text.canceled += instance.OnText;
+        }
+
+        private void UnregisterCallbacks(ITutorialActions instance)
+        {
+            @Text.started -= instance.OnText;
+            @Text.performed -= instance.OnText;
+            @Text.canceled -= instance.OnText;
+        }
+
+        public void RemoveCallbacks(ITutorialActions instance)
+        {
+            if (m_Wrapper.m_TutorialActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ITutorialActions instance)
+        {
+            foreach (var item in m_Wrapper.m_TutorialActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_TutorialActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public TutorialActions @Tutorial => new TutorialActions(this);
     private int m_KeyboardmouseSchemeIndex = -1;
     public InputControlScheme KeyboardmouseScheme
     {
@@ -568,5 +645,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnUse(InputAction.CallbackContext context);
         void OnFly(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+    }
+    public interface ITutorialActions
+    {
+        void OnText(InputAction.CallbackContext context);
     }
 }
