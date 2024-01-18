@@ -17,6 +17,9 @@ public class TouchedDestroyer : MonoBehaviour
             case "Car":
                 Destroy(other.gameObject);
                 break;
+            case "Medical":
+                Destroy(other.gameObject);
+                break;
             case "Player":
                 //Debug.Log("player entered water");
                 other.GetComponent<PlayerGrab>().Release(0);

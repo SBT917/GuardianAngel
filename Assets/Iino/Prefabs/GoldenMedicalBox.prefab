@@ -344,10 +344,10 @@ GameObject:
   - component: {fileID: 7313530583613114982}
   - component: {fileID: 9093984968111719927}
   - component: {fileID: 1509593062123566298}
-  - component: {fileID: 6989433942350125983}
+  - component: {fileID: -5707408549825209493}
   m_Layer: 0
   m_Name: GoldenMedicalBox
-  m_TagString: Untagged
+  m_TagString: Medical
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -432,7 +432,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsDestroyAfterRevive: 0
---- !u!114 &6989433942350125983
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  detectionRadius: 5
+  alreadyThrowing: 0
+  itemGrab: {fileID: -5707408549825209493}
+--- !u!114 &-5707408549825209493
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -441,6 +447,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4153380685734720439}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9eb7f682622a6439a648f57759c843, type: 3}
+  m_Script: {fileID: 11500000, guid: 20af5be1c62b18f4b988b05ed821fa57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwingForce: 15
+  grabbingOffset: 5
