@@ -12,6 +12,7 @@ public class GodTalk : MonoBehaviour
     [SerializeField] private string[] explainTextsKeyboard;
     [SerializeField] private float autoTalkSpan;
 
+    private bool isExplained = false;
     private char[] chars;
     private Coroutine coroutine;
 
@@ -34,7 +35,8 @@ public class GodTalk : MonoBehaviour
             yield return new WaitForSeconds(5f);
             text.text = "";
         }
-        
+
+        isExplained = true;
         coroutine = StartCoroutine(AutoTalkCoroutine());
     }
 
@@ -51,5 +53,33 @@ public class GodTalk : MonoBehaviour
             yield return new WaitForSeconds(autoTalkSpan);
             text.text = "";
         }  
+    }
+
+    void EventTalk(string talkString)
+    {
+        if (!isExplained) return;
+
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null;
+        }
+
+        text.text = "";
+        coroutine = StartCoroutine(EventTalkCoroutine(talkString));
+    }
+
+    IEnumerator EventTalkCoroutine(string talkString)
+    {
+        chars = talkString.ToCharArray();
+        for (int i = 0; i < chars.Length; i++)
+        {
+            text.text += chars[i];
+            yield return new WaitForSeconds(0.1f);
+        }
+        yield return new WaitForSeconds(autoTalkSpan);
+
+        text.text = "";
+        coroutine = StartCoroutine(AutoTalkCoroutine());
     }
 }
