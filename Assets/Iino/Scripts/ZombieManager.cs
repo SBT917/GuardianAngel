@@ -45,6 +45,6 @@ public class ZombieManager : MonoBehaviour
 
     Transform GetRandomSpawnPoint()
     {
-        return zombieSpawnPoint[Random.Range(0, zombieSpawnPoint.Length - 1)];
+        return zombieSpawnPoint[Random.Range(0, zombieSpawnPoint.Length)];
     }
 }

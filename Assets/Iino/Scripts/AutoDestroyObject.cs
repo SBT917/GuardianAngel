@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AutoDestroyObject : MonoBehaviour
 {
-    public int DestroyFrame;
+    public int DestroySeconds;
     void Start()
     {
-        Destroy(gameObject,DestroyFrame);
+        Destroy(gameObject,DestroySeconds);
     }
 
 }

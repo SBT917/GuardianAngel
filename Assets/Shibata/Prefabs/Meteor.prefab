@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eeffd7419434184aaf10a33f30235b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeEffect: {fileID: 131164, guid: 3c5f4e32698bdb04eaed647f60310510, type: 3}
+  explodeEffect: {fileID: 631908053812789935, guid: 27f2514b2fb4c0f4b8ac382599f6a3fb, type: 3}
   fallPointMaker: {fileID: 1262544728904731607, guid: 09f1a2b3ed89b1f41861b23b77808caa, type: 3}
   ingnoreLayer:
     serializedVersion: 2

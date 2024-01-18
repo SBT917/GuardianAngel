@@ -140,8 +140,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minForce: 3500
   maxForce: 5000
-  ClashEffect: {fileID: 131164, guid: 3c5f4e32698bdb04eaed647f60310510, type: 3}
+  ClashEffect: {fileID: 7047192779975178933, guid: ee58e9d31d7139a42a70b693ff80d129, type: 3}
   autoDestroy: 1
+  isDropItem: 0
+  dropItemPrefab: {fileID: 0}
 --- !u!54 &5796420807506566401
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -203,3 +205,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11193f5140cf0a4191e7300c5c3bd08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwingForce: 15
+  grabbingOffset: 5
