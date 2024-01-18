@@ -17,10 +17,9 @@ GameObject:
   - component: {fileID: 3457502736997397858}
   - component: {fileID: 4284570551848090533}
   - component: {fileID: -759541238961156738}
-  - component: {fileID: -3527431923418676481}
   m_Layer: 6
   m_Name: MovingCar3
-  m_TagString: Medical
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,6 +142,8 @@ MonoBehaviour:
   maxForce: 5000
   ClashEffect: {fileID: 131164, guid: 3c5f4e32698bdb04eaed647f60310510, type: 3}
   autoDestroy: 1
+  isDropItem: 1
+  dropItemPrefab: {fileID: 796227620368519104, guid: d4156e46c72b63d4292f995aab444081, type: 3}
 --- !u!54 &3457502736997397858
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -206,16 +207,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwingForce: 15
   grabbingOffset: 5
---- !u!114 &-3527431923418676481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4868384176941370661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 763fca55e75d1084cbd57b30919b2154, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsDestroyAfterRevive: 0

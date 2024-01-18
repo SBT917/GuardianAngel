@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7e45064a7c13fc14aa1d6aaf4e136a05, type: 3}
       propertyPath: m_RootOrder
-      value: 27
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7e45064a7c13fc14aa1d6aaf4e136a05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7e45064a7c13fc14aa1d6aaf4e136a05, type: 3}
+      propertyPath: m_TagString
+      value: Medical
+      objectReference: {fileID: 0}
     - target: {fileID: 2936805100443423161, guid: 7e45064a7c13fc14aa1d6aaf4e136a05, type: 3}
       propertyPath: m_Name
       value: edgh
@@ -123,7 +127,7 @@ PrefabInstance:
       addedObject: {fileID: 231659227807890522}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7e45064a7c13fc14aa1d6aaf4e136a05, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4758245025347742734}
+      addedObject: {fileID: -1166932556430144131}
   m_SourcePrefab: {fileID: 100100000, guid: 7e45064a7c13fc14aa1d6aaf4e136a05, type: 3}
 --- !u!1 &796227620368519104 stripped
 GameObject:
@@ -191,7 +195,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsDestroyAfterRevive: 1
---- !u!114 &4758245025347742734
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  detectionRadius: 5
+  alreadyThrowing: 0
+  itemGrab: {fileID: -1166932556430144131}
+--- !u!114 &-1166932556430144131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,6 +210,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 796227620368519104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9eb7f682622a6439a648f57759c843, type: 3}
+  m_Script: {fileID: 11500000, guid: 20af5be1c62b18f4b988b05ed821fa57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwingForce: 0.3
+  grabbingOffset: 3

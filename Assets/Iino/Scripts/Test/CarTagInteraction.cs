@@ -17,6 +17,13 @@ public class CarTagInteraction : MonoBehaviour
 
     [SerializeField]
     private bool autoDestroy = true;
+
+    [SerializeField]
+    private bool isDropItem;
+
+    [SerializeField]
+    private GameObject dropItemPrefab;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Car"))
@@ -42,7 +49,25 @@ public class CarTagInteraction : MonoBehaviour
                 this.gameObject.layer = 7;
 
                 GetComponent<CarGrab>().enabled = false;
+
+                if(isDropItem)
+                {
+                    DropItem(Random.Range(1,4));
+                }
             }
+        }
+    }
+
+    private void DropItem(int dropNum)
+    {
+        var spawnPosition = transform.position + new Vector3(0,2,0);
+        for(int i = 0;i < dropNum;++i)
+        {
+            
+            GameObject item = Instantiate(dropItemPrefab,spawnPosition, Quaternion.identity);
+            Rigidbody itemRb = item.GetComponent<Rigidbody>();
+            Vector3 randomForce = new Vector3(Random.Range(-1f,1f),2f,Random.Range(-1f,1f)).normalized;
+            itemRb.AddForce(randomForce, ForceMode.Impulse);
         }
     }
 }
