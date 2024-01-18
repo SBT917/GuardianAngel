@@ -434,7 +434,7 @@ MonoBehaviour:
   IsDestroyAfterRevive: 0
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   detectionRadius: 5
   alreadyThrowing: 0
   itemGrab: {fileID: -5707408549825209493}
