@@ -2,37 +2,37 @@
   "ranks": [
     {
       "rank": "堕天使",
-      "maxScore": 100,
+      "maxScore": 30,
       "comment": "おまえはクビじゃ！！！"
     },
     {
       "rank": "天使",
-      "maxScore": 35,
+      "maxScore": 25,
       "comment": "なんじゃこいつはキモいのう\nワシの走馬灯に現れないのを祈るばかりじゃ"
     },
     {
       "rank": "大天使",
-      "maxScore": 30,
+      "maxScore": 20,
       "comment": "WASDで歩けるのじゃ"
     },
     {
       "rank": "権天使",
-      "maxScore": 25,
+      "maxScore": 15,
       "comment": "はなから殺す気だグいのじゃ"
     },
     {
       "rank": "能天使",
-      "maxScore": 20,
+      "maxScore": 12,
       "comment": "鬼のチェグじゃ"
     },
     {
       "rank": "力天使",
-      "maxScore": 15,
+      "maxScore": 10,
       "comment": "パーティ閉じじゃ"
     },
     {
       "rank": "主天使",
-      "maxScore": 10,
+      "maxScore": 7,
       "comment": "(^_-)-☆"
     },
     {
