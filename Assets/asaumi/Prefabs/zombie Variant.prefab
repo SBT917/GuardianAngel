@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0437db795f0a1bf46970d8a475a5bc71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabbingOffset: 2
+  grabbingOffset: 4
 --- !u!114 &7315610029864755482
 MonoBehaviour:
   m_ObjectHideFlags: 0

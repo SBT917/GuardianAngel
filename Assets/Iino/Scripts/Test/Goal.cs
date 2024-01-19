@@ -29,9 +29,9 @@ public class Goal : MonoBehaviour
             EffectManager.instance.PlayEffect(6,transform.position);
             StartCoroutine(BallInitPos(collision.gameObject));
             score++;
-            var spawnPosition = ballInitPosition.position + new Vector3(0, 2, 0);
             for (int i = 0; i < score; ++i)
             {
+                var spawnPosition = ballInitPosition.position + new Vector3(Random.Range(-3f, 3f), 10, Random.Range(-3f, 3f));
                 GameObject item = Instantiate(BonusItem, spawnPosition, Quaternion.identity);
                 Rigidbody itemRb = item.GetComponent<Rigidbody>();
                 Vector3 randomForce = new Vector3(Random.Range(-1f, 1f), 2f, Random.Range(-1f, 1f)).normalized;
