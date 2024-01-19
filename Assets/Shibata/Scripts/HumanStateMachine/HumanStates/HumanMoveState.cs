@@ -8,8 +8,6 @@ public class HumanMoveState : HumanBaseState
     private readonly int MoveHash = Animator.StringToHash("Move");
     private const float CrossFadeDuration = 0.1f;
 
-    // ƒŒƒC‚Ì’·‚³
-    private float maxMoveDistance = 50f;
     // •à‚­•ûŒü
     private Vector3 walkDirection;
 
@@ -24,8 +22,6 @@ public class HumanMoveState : HumanBaseState
         stateMachine.Agent.isStopped = false;
         stateMachine.Agent.speed = stateMachine.MovementSpeed;
         stateMachine.Animator.CrossFadeInFixedTime(MoveHash, CrossFadeDuration);
-
-        ResetWalkParameters();
     }
 
     public override void Exit()
@@ -38,22 +34,11 @@ public class HumanMoveState : HumanBaseState
         UpdateAgentMovement();
     }
 
-    void ResetWalkParameters()
-    {
-        // ƒ‰ƒ“ƒ_ƒ€‚Ì•ûŒü‚ğì¬
-        var x = (Random.value * 2f) - 1f;
-        var z = (Random.value * 2f) - 1f;
-
-        walkDirection = new Vector3(x, 0f, z).normalized;
-    }
-
-
     void UpdateAgentMovement()
     {
         if (stateMachine.Agent.remainingDistance < 5)
         {
             MoveTowardsTarget();
-            ResetWalkParameters();
         }
     }
 
