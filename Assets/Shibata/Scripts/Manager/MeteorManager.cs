@@ -7,6 +7,8 @@ public class MeteorManager : MonoBehaviour
     [SerializeField] private GameObject meteor;
     [SerializeField] private Transform rangeA;
     [SerializeField] private Transform rangeB;
+    [SerializeField] private float spawnSpan;
+    [SerializeField] private int oneTimeSpawnCount;
 
     // 経過時間
     private float time;
@@ -14,13 +16,11 @@ public class MeteorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 前フレームからの時間を加算していく
         time = time + Time.deltaTime;
 
-        // 約1秒置きにランダムに生成されるようにする。
-        if (time > 10.0f)
+        if (time > spawnSpan)
         {
-            for (int i = 0; i < 5; ++i)
+            for (int i = 0; i < oneTimeSpawnCount; ++i)
             {
                 // rangeAとrangeBのx座標の範囲内でランダムな数値を作成
                 float x = Random.Range(rangeA.position.x, rangeB.position.x);
