@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HaloController : MonoBehaviour
 {
-    [SerializeField] public float colorChangeMultiplier = 0.1f;
+    [SerializeField] public float colorChangeMultiplier = 0.033f;
     [SerializeField] private Material haloMaterial;
     private int currentScore;
     // Start is called before the first frame update
