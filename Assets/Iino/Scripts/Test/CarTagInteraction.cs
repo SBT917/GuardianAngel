@@ -60,10 +60,10 @@ public class CarTagInteraction : MonoBehaviour
 
     private void DropItem(int dropNum)
     {
-        var spawnPosition = transform.position + new Vector3(0,2,0);
+        
         for(int i = 0;i < dropNum;++i)
         {
-            
+            var spawnPosition = transform.position + new Vector3(Random.Range(-1f, 1f), 2f, Random.Range(-1f, 1f));
             GameObject item = Instantiate(dropItemPrefab,spawnPosition, Quaternion.identity);
             Rigidbody itemRb = item.GetComponent<Rigidbody>();
             Vector3 randomForce = new Vector3(Random.Range(-1f,1f),2f,Random.Range(-1f,1f)).normalized;
