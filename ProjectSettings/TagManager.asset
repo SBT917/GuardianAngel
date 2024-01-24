@@ -12,6 +12,7 @@ TagManager:
   - Medical
   - death
   - Human
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - ClashedCar
   - Medical
   - Meteor
-  - 
+  - PostProcess
   - 
   - 
   - 
