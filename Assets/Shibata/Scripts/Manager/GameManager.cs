@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         TimeManager.instance.IsCounting = true;
         TimeManager.instance.onTimeCountZero += () =>
         {
