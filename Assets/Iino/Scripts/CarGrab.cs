@@ -34,6 +34,7 @@ public class CarGrab : MonoBehaviour,IGrabbable
     public void Release(Vector3 direction, float force)
     {
         col.enabled = true;
+        rb.constraints = RigidbodyConstraints.None;
         rb.useGravity = true;
         rb.AddForce(direction * force * 15, ForceMode.Impulse);
     }
