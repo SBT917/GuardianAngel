@@ -625,59 +625,6 @@ Transform:
   m_Father: {fileID: 5590584421477139101}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.0063893837, y: 0.020647537, z: 33.738964}
---- !u!1 &1300415361988888485
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8513554487059693636}
-  - component: {fileID: 7864530085079883277}
-  m_Layer: 0
-  m_Name: GrabCollision
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8513554487059693636
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300415361988888485}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.06, z: 2.35}
-  m_LocalScale: {x: 3.333333, y: 3.333333, z: 3.333333}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5746404811296970012}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7864530085079883277
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300415361988888485}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1419885418610110074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1254,6 +1201,77 @@ Transform:
   m_Father: {fileID: 5746404811296970012}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -89.98021, y: 0, z: 0}
+--- !u!1 &3255864002198625675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8591968115521735285}
+  - component: {fileID: 4892194254731474611}
+  - component: {fileID: 2612011348722362603}
+  m_Layer: 0
+  m_Name: GrabCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8591968115521735285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255864002198625675}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3, z: 4.04}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 5746404811296970012}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &4892194254731474611
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255864002198625675}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2612011348722362603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255864002198625675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ddba10dfa0bf247ab8085502db27b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineColor: {r: 0, g: 1, b: 1, a: 1}
+  outlineResources: {fileID: 11400000, guid: d28e70f030b1a634db9a6a6d5478ef19, type: 2}
+  aimingUi: {fileID: 0}
+  grabRadius: 1
+  grabDistance: 1.5
 --- !u!1 &3257937282743971528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,7 +1790,6 @@ GameObject:
   - component: {fileID: 5510581714663858605}
   - component: {fileID: 181354967786259605}
   - component: {fileID: 7808412425788288665}
-  - component: {fileID: 7319472956795910226}
   - component: {fileID: 6241061183027659278}
   m_Layer: 0
   m_Name: PlayerPrefab
@@ -1802,9 +1819,9 @@ Transform:
   - {fileID: 3847940832616113691}
   - {fileID: 3701587315725027315}
   - {fileID: 4573274795210428902}
-  - {fileID: 8513554487059693636}
+  - {fileID: 8591968115521735285}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5203326387668254155
 Animator:
@@ -1883,19 +1900,6 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0, z: 0}
   <PlayerMaxStamina>k__BackingField: 30
   <PlayerStamina>k__BackingField: 0
---- !u!114 &7319472956795910226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4968741520837693350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44ddba10dfa0bf247ab8085502db27b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimingUi: {fileID: 0}
 --- !u!136 &6241061183027659278
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3176,6 +3180,7 @@ GameObject:
   - component: {fileID: 27581030150807652}
   - component: {fileID: 2579611983200769719}
   - component: {fileID: 6593944223818671770}
+  - component: {fileID: 4643208381575672458}
   m_Layer: 0
   m_Name: halo.001
   m_TagString: Untagged
@@ -3317,6 +3322,20 @@ SkinnedMeshRenderer:
     m_Extent: {x: 0.5831849, y: 0.04736066, z: 0.5831848}
   m_DirtyAABB: 0
 --- !u!114 &6593944223818671770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963185293248404129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f57853f6e65d3c408a4cd7df0ea5d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorChangeMultiplier: 0.1
+  haloMaterial: {fileID: 2100000, guid: febc2a457e74a984db02173767301e8f, type: 2}
+--- !u!114 &4643208381575672458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

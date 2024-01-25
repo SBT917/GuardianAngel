@@ -32,7 +32,7 @@ public class PlayerStateMachine : StateMachine
         InputReader = GetComponent<InputReader>();
         Animator = GetComponent<Animator>();
         Controller  = GetComponent<CharacterController>();
-        GrabComponent = GetComponent<PlayerGrab>();
+        GrabComponent = GetComponentInChildren<PlayerGrab>();
         PlayerStamina = PlayerMaxStamina;
 
         SwitchState(new PlayerMoveState(this));

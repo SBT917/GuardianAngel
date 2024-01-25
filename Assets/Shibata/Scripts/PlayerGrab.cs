@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityFx.Outline;
+using static UnityEditor.PlayerSettings;
 
 public class PlayerGrab : MonoBehaviour
 {
@@ -8,13 +11,20 @@ public class PlayerGrab : MonoBehaviour
     private IGrabbable grabbable;
     private float followSpeed;
     private float followPosOffset;
+    private bool isHit;
+    private OutlineBehaviour outline;
+
+    [SerializeField] private Color outlineColor = Color.cyan;
+    [SerializeField] private OutlineResources outlineResources;
     [SerializeField] private GameObject aimingUi;
+    [SerializeField] private float grabRadius = 1f;
+    [SerializeField] private float grabDistance = 1.5f;
 
     public GameObject GrabbingObject { get; private set; }
 
     private void Awake()
     {
-        TryGetComponent(out stateMachine);
+        transform.parent.TryGetComponent(out stateMachine);
         if(stateMachine != null) followSpeed = stateMachine.MovementSpeed;
     }
 
@@ -23,19 +33,18 @@ public class PlayerGrab : MonoBehaviour
         FollowGrabbingObject();
     }
 
+    
     public void Grab()
     {
+        if (stateMachine.GetState().GetType() != typeof(PlayerMoveState)) return;
         if (GrabbingObject != null) return;
 
-        RaycastHit hit;
-        Vector3 direction = transform.TransformDirection(Vector3.forward);
-        if (Physics.BoxCast(transform.position, Vector3.one, direction, out hit, Quaternion.identity, 1f))
+
+        if(isHit)
         {
-            if (hit.transform.TryGetComponent(out grabbable))
-            {
-                GrabbingObject = grabbable.Grabbed(out followPosOffset);
-                aimingUi.gameObject.SetActive(true);
-            }
+            DisableOutline();
+            GrabbingObject = grabbable.Grabbed(out followPosOffset);
+            aimingUi.gameObject.SetActive(true);
         }
     }
 
@@ -43,6 +52,7 @@ public class PlayerGrab : MonoBehaviour
     {
         if (GrabbingObject == null) return;
 
+        DisableOutline();
         grabbable.Release(stateMachine.MainCamera.transform.forward, force);
         aimingUi.gameObject.SetActive(false);
         GrabbingObject = null;
@@ -60,6 +70,52 @@ public class PlayerGrab : MonoBehaviour
         {
             GrabbingObject.transform.position += moveDirection * followSpeed * Time.deltaTime;
 
+        }
+    }
+
+    private void EnableOutline(GameObject gameObject)
+    {
+        if (!gameObject.TryGetComponent(out outline))
+        {
+            outline = gameObject.AddComponent<OutlineBehaviour>();
+            outline.OutlineResources = outlineResources;
+            outline.OutlineColor = outlineColor;
+        }
+        else
+        {
+            outline.enabled = true;
+        }
+    }
+
+    private void DisableOutline()
+    {
+        if (outline != null)
+        {
+            outline.enabled = false;
+            outline = null;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (stateMachine.GetState().GetType() != typeof(PlayerMoveState)) return;
+        if (GrabbingObject != null) return;
+
+        if (other.TryGetComponent(out grabbable))
+        {
+            isHit = true;
+            EnableOutline(other.gameObject);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (GrabbingObject != null) return;
+
+        if (other.TryGetComponent(out grabbable))
+        {
+            isHit = false;
+            DisableOutline();
         }
     }
 

@@ -25,7 +25,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         controls.Player.SetCallbacks(this);
         controls.Player.Enable();
 
-        TryGetComponent(out playerGrab);
+        playerGrab = GetComponentInChildren<PlayerGrab>();
     }
 
     private void Start()
