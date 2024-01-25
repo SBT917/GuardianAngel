@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!33 &8778854622858739451
 MeshFilter:
@@ -124,7 +124,7 @@ MonoBehaviour:
   fallPointMaker: {fileID: 1262544728904731607, guid: 09f1a2b3ed89b1f41861b23b77808caa, type: 3}
   ingnoreLayer:
     serializedVersion: 2
-    m_Bits: 2304
+    m_Bits: 2560
 --- !u!54 &570934798061055962
 Rigidbody:
   m_ObjectHideFlags: 0
