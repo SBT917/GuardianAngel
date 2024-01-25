@@ -43,6 +43,7 @@ public class PlayerGrab : MonoBehaviour
         if(isHit)
         {
             DisableOutline();
+            isHit = false;
             GrabbingObject = grabbable.Grabbed(out followPosOffset);
             aimingUi.gameObject.SetActive(true);
         }
@@ -99,6 +100,7 @@ public class PlayerGrab : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (stateMachine.GetState().GetType() != typeof(PlayerMoveState)) return;
+        if (isHit) return;
         if (GrabbingObject != null) return;
 
         if (other.TryGetComponent(out grabbable))
@@ -110,6 +112,7 @@ public class PlayerGrab : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (!isHit) return;
         if (GrabbingObject != null) return;
 
         if (other.TryGetComponent(out grabbable))
