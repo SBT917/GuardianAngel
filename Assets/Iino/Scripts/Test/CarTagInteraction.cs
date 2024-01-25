@@ -43,6 +43,8 @@ public class CarTagInteraction : MonoBehaviour
 
                 EffectManager.instance.PlayEffect(0, transform.position);
                 Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+                rb.freezeRotation = false;
+                rb.constraints = RigidbodyConstraints.None;
                 Vector3 pushDirection = Random.onUnitSphere;
                 float force = Random.Range(minForce, maxForce);
                 rb.AddForce(pushDirection * force, ForceMode.Impulse);

@@ -12,19 +12,20 @@ TagManager:
   - Medical
   - death
   - Human
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Car
   - ClashedCar
   - Medical
   - Meteor
-  - 
-  - 
+  - PostProcess
+  - InvisibleWall
   - 
   - 
   - 
