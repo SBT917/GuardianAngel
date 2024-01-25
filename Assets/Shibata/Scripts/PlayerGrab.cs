@@ -36,8 +36,9 @@ public class PlayerGrab : MonoBehaviour
     
     public void Grab()
     {
-        if (stateMachine.GetState().GetType() != typeof(PlayerMoveState)) return;
         if (GrabbingObject != null) return;
+        if (stateMachine.GetState().GetType() != typeof(PlayerMoveState)) return;
+        
 
 
         if(isHit)
