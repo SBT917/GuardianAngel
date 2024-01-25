@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathHuman: {fileID: 5045263310802468985, guid: 0ca2bdafa8128cc43b5f95b08fe8cb69, type: 3}
+  Zombie: {fileID: 0}
 --- !u!114 &2028668779843458911
 MonoBehaviour:
   m_ObjectHideFlags: 0
