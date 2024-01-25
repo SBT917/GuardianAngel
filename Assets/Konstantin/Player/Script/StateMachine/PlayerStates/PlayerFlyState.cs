@@ -19,6 +19,7 @@ public class PlayerFlyState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.currentState = this;
         stateMachine.Animator.CrossFadeInFixedTime(FlyHash, CrossFadeDuration);
         stateMachine.InputReader.OnJumpPerformed += SwitchToFallState;
         stateMachine.GrabComponent.Release(0);
@@ -55,7 +56,7 @@ public class PlayerFlyState : PlayerBaseState
     {
         stateMachine.SwitchState(new PlayerFallState(stateMachine));
     }
-
+    
     
    
 }

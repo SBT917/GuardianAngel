@@ -21,7 +21,7 @@ public class ChaseEnemy : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(navMeshAgent.remainingDistance);
+        //Debug.Log(navMeshAgent.remainingDistance);
         if (targetCarHuman != null)
         {
             navMeshAgent.SetDestination(targetCarHuman.transform.position);

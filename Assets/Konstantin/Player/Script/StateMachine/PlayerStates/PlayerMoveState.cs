@@ -15,6 +15,7 @@ public class PlayerMoveState : PlayerBaseState
     }
     public override void Enter()
     {
+        stateMachine.currentState = this;
         stateMachine.Velocity.y = Physics.gravity.y;
         stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
         stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;

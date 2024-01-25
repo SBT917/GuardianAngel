@@ -14,6 +14,7 @@ public class PlayerFallState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.currentState = this;
         stateMachine.Velocity.y = 0f;
         stateMachine.Animator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
     }

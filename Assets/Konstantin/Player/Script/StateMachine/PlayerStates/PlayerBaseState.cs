@@ -47,7 +47,7 @@ public abstract class PlayerBaseState : State
         }
     }
 
-    protected void Move()
+    protected virtual void Move()
     {
         stateMachine.Controller.Move(stateMachine.Velocity * stateMachine.MovementSpeedMultiplier * Time.deltaTime);
     }

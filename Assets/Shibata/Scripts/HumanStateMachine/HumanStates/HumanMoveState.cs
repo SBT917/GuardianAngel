@@ -14,7 +14,7 @@ public class HumanMoveState : HumanBaseState
 
     public HumanMoveState(HumanStateMachine stateMachine) : base(stateMachine)
     {
-        Debug.Log(stateMachine.gameObject.name + ": move state enter");
+        //Debug.Log(stateMachine.gameObject.name + ": move state enter");
     }
 
     public override void Enter()

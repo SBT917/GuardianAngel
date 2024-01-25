@@ -25,6 +25,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float PlayerMaxStamina { get; set; } = 50f;
     [field: SerializeField] public float PlayerStamina { get; set; }
     public Action<float> onChangeStamina;
+    [field: SerializeField] public bool playerStunned { get; set; }
+    [field: SerializeField] public PlayerBaseState currentState { get; set; }
 
     private void Awake()
     {
@@ -34,7 +36,8 @@ public class PlayerStateMachine : StateMachine
         Controller  = GetComponent<CharacterController>();
         GrabComponent = GetComponentInChildren<PlayerGrab>();
         PlayerStamina = PlayerMaxStamina;
-
+        playerStunned = false;
+        currentState = new PlayerMoveState(this);
         SwitchState(new PlayerMoveState(this));
     }
 
