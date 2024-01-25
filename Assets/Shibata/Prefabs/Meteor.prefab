@@ -124,7 +124,7 @@ MonoBehaviour:
   fallPointMaker: {fileID: 1262544728904731607, guid: 09f1a2b3ed89b1f41861b23b77808caa, type: 3}
   ingnoreLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2304
 --- !u!54 &570934798061055962
 Rigidbody:
   m_ObjectHideFlags: 0
