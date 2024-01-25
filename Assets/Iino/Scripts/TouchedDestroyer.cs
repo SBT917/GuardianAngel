@@ -22,7 +22,7 @@ public class TouchedDestroyer : MonoBehaviour
                 break;
             case "Player":
                 //Debug.Log("player entered water");
-                other.GetComponent<PlayerGrab>().Release(0);
+                other.GetComponentInChildren<PlayerGrab>().Release(0);
                 other.GetComponent<Transform>().position = spawnPoint;
                 break;
             default:
