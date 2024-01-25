@@ -24,6 +24,7 @@ public class TouchedDestroyer : MonoBehaviour
                 //Debug.Log("player entered water");
                 other.GetComponentInChildren<PlayerGrab>().Release(0);
                 other.GetComponent<Transform>().position = spawnPoint;
+                EffectManager.instance.PlayEffect(1,other.transform.position);
                 break;
             default:
                 break;
