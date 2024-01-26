@@ -13,6 +13,7 @@ TagManager:
   - death
   - Human
   - FxTemporaire
+  - Meteor
   layers:
   - Default
   - TransparentFX

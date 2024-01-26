@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,9 +9,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 {
     public Vector2 MouseDelta;
     public Vector2 MoveComposite;
-
     public float Altitude;
-
     public Action OnJumpPerformed;
 
     private Controls controls;
@@ -79,4 +78,5 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         }
         GameManager.instance.ResumeGame();
     }
+
 }

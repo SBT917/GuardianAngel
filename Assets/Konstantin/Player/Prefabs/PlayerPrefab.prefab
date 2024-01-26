@@ -1821,7 +1821,7 @@ Transform:
   - {fileID: 4573274795210428902}
   - {fileID: 8591968115521735285}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5203326387668254155
 Animator:
@@ -1900,6 +1900,7 @@ MonoBehaviour:
   Velocity: {x: 0, y: 0, z: 0}
   <PlayerMaxStamina>k__BackingField: 30
   <PlayerStamina>k__BackingField: 0
+  <playerStunned>k__BackingField: 0
 --- !u!136 &6241061183027659278
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1915,14 +1916,14 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1
-  m_Height: 6
+  m_Radius: 1.5497588
+  m_Height: 5.31528
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: -0.36463082, y: 4.5489907, z: -0.3661855}
 --- !u!1 &5070897372870003084
 GameObject:
   m_ObjectHideFlags: 0
