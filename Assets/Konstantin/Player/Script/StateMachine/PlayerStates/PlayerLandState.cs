@@ -17,6 +17,7 @@ public class PlayerLandState : PlayerBaseState
     }
     public override async void Enter()
     {
+        stateMachine.currentState = this;
         stateMachine.Animator.CrossFadeInFixedTime(LandHash, CrossFadeDuration);
         await Task.Delay(200);
         stateMachine.SwitchState(new PlayerMoveState(stateMachine));

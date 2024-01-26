@@ -25,6 +25,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float PlayerMaxStamina { get; set; } = 50f;
     [field: SerializeField] public float PlayerStamina { get; set; }
     public Action<float> onChangeStamina;
+    [field: SerializeField] public bool playerStunned { get; set; }
+    [field: SerializeField] public PlayerBaseState currentState { get; set; }
 
     private void Awake()
     {
@@ -34,9 +36,33 @@ public class PlayerStateMachine : StateMachine
         Controller  = GetComponent<CharacterController>();
         GrabComponent = GetComponentInChildren<PlayerGrab>();
         PlayerStamina = PlayerMaxStamina;
-
+        playerStunned = false;
+        currentState = new PlayerMoveState(this);
         SwitchState(new PlayerMoveState(this));
     }
 
+    private void OnTriggerEnter(Collider collision)
+    {
 
+        if (collision.gameObject.tag == "Meteor")
+        {
+            PlayerStateMachine stateMachine = gameObject.GetComponent<PlayerStateMachine>();
+            if (stateMachine.currentState is PlayerFlyState)
+            {
+                stateMachine.SwitchState(new PlayerFallState(stateMachine));
+            }
+            else if (stateMachine.currentState is PlayerFallState)
+            {
+                return;
+            }
+            else
+            {
+                if (!playerStunned)
+                {
+                    stateMachine.SwitchState(new PlayerStunState(stateMachine));
+                    EffectManager.instance.PlayEffect(7, gameObject.transform.position);
+                }
+            }
+        }
+    }
 }

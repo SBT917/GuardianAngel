@@ -14,6 +14,7 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.currentState = this;
         stateMachine.Velocity = new Vector3(stateMachine.Velocity.x, stateMachine.JumpForce, stateMachine.Velocity.z);
         stateMachine.Animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
         stateMachine.InputReader.OnJumpPerformed += SwitchToFlyState;
