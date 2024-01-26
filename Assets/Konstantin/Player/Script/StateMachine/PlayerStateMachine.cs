@@ -25,8 +25,10 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float PlayerMaxStamina { get; set; } = 50f;
     [field: SerializeField] public float PlayerStamina { get; set; }
     public Action<float> onChangeStamina;
-    [field: SerializeField] public bool playerStunned { get; set; }
+    public bool playerStunned { get; set; }
     [field: SerializeField] public PlayerBaseState currentState { get; set; }
+    [field: SerializeField] public int StunTime { get; set; }
+
 
     private void Awake()
     {
