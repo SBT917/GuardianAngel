@@ -31,6 +31,7 @@ public class ChangeObjectThrowing : MonoBehaviour
         if (!alredyGeneretedClone)
         {
             EffectManager.instance.PlayEffect(5,transform.position + new Vector3(0,2,0));
+            AudioManager.instance.PlaySE("Attack", transform.position);
             Instantiate(ChangeDestination, transform.position, transform.rotation);
             alredyGeneretedClone = true;
         }

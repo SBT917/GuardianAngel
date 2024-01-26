@@ -39,6 +39,7 @@ public class HumanStateMachine : StateMachine, IGrabbable
         Rigidbody.useGravity = true;
         Agent.enabled = true;
         SwitchState(new HumanIdleState(this));
+        AudioManager.instance.PlaySE("HumanPut");
     }
 
 }

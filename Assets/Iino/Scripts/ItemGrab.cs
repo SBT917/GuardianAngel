@@ -36,7 +36,8 @@ public class ItemGrab : MonoBehaviour, IGrabbable
         col.enabled = true;
         rb.useGravity = true;
         rb.AddForce(direction * force * throwingForce, ForceMode.Impulse);
-        if(OnItemThrown != null) { OnItemThrown(); }
+        AudioManager.instance.PlaySE("Release");
+        if (OnItemThrown != null) { OnItemThrown(); }
 
     }
 }

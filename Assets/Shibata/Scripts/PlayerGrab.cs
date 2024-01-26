@@ -47,6 +47,7 @@ public class PlayerGrab : MonoBehaviour
             isHit = false;
             GrabbingObject = grabbable.Grabbed(out followPosOffset);
             aimingUi.gameObject.SetActive(true);
+            AudioManager.instance.PlaySE("Grab");
         }
     }
 

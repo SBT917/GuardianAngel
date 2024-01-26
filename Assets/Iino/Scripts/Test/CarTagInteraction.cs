@@ -42,6 +42,7 @@ public class CarTagInteraction : MonoBehaviour
                 wasClashed = true;
 
                 EffectManager.instance.PlayEffect(0, transform.position);
+                AudioManager.instance.PlaySE("Explosion", transform.position);
                 Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
                 rb.freezeRotation = false;
                 rb.constraints = RigidbodyConstraints.None;

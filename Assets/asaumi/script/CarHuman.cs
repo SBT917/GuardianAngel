@@ -21,10 +21,11 @@ public class CarHuman : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Car")
+        if (collision.gameObject.tag == "Car"||collision.gameObject.tag == "Meteor")
         {
             if (collision.gameObject.GetComponent<Rigidbody>().velocity.magnitude > 0.1)
             {
+                AudioManager.instance.PlaySE("Scream", transform.position);
                 // 衝突が発生したらアニメーターを停止
                 Death();
             }

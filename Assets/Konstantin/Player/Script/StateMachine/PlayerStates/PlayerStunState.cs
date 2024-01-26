@@ -7,6 +7,7 @@ public class PlayerStunState : PlayerBaseState
 {
     private readonly int StunHash = Animator.StringToHash("Stun");
     private const float CrossFadeDuration = 0.1f;
+
     public PlayerStunState(PlayerStateMachine stateMachine):base(stateMachine)
     {
        
@@ -19,7 +20,7 @@ public class PlayerStunState : PlayerBaseState
             stateMachine.GrabComponent.Release(0);
         }
         stateMachine.Animator.CrossFadeInFixedTime(StunHash, CrossFadeDuration);
-        await Task.Delay(5000);
+        await Task.Delay(stateMachine.StunTime);
         stateMachine.SwitchState(new PlayerMoveState(stateMachine));
     }
     public override void Tick()

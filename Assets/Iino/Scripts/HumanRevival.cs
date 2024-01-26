@@ -21,7 +21,8 @@ public class HumanRevival : MonoBehaviour
     public void Revive()
     {
         EffectManager.instance.PlayEffect(4, new Vector3(transform.position.x, initYpos + 2, transform.position.z));
-        if(alreadyRevived) return;
+        AudioManager.instance.PlaySE("Yatta", new Vector3(transform.position.x, initYpos + 2));
+        if (alreadyRevived) return;
         alreadyRevived = true;
         ++HumanManager.instance.HumanCount;
         --HumanManager.HumanDeathCount;

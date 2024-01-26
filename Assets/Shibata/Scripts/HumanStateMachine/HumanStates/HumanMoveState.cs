@@ -8,9 +8,6 @@ public class HumanMoveState : HumanBaseState
     private readonly int MoveHash = Animator.StringToHash("Move");
     private const float CrossFadeDuration = 0.1f;
 
-    // •à‚­•ûŒü
-    private Vector3 walkDirection;
-
 
     public HumanMoveState(HumanStateMachine stateMachine) : base(stateMachine)
     {

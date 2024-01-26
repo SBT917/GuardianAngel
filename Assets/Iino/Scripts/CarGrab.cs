@@ -37,6 +37,7 @@ public class CarGrab : MonoBehaviour,IGrabbable
         rb.constraints = RigidbodyConstraints.None;
         rb.useGravity = true;
         rb.AddForce(direction * force * 15, ForceMode.Impulse);
+        AudioManager.instance.PlaySE("Release");
     }
 
 }

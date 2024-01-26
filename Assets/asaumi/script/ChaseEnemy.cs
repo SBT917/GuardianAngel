@@ -31,6 +31,7 @@ public class ChaseEnemy : MonoBehaviour
             if (navMeshAgent.remainingDistance < 1.5f && !navMeshAgent.pathPending)
             {
                 targetCarHuman.GetComponent<CarHuman>().Death();
+                AudioManager.instance.PlaySE("Attack", transform.position);
                 targetCarHuman = null;
                 // ターゲットに到達したら新しいターゲットを検索
                 FindNewTarget();
