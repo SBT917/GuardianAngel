@@ -7,13 +7,13 @@ public class AudioData
 {
     public string name;
     public AudioClip clip;
-    [Range(0, 1)] public float volume = 1;
+    [Range(0, 1)] public float volume = 0.5f;
 }
 
+[RequireComponent(typeof(AudioSource))]
 public class AudioManager : Singleton<AudioManager> //シングルトン継承
 {
-    [SerializeField] private AudioSource bgmSource; //AudioSource
-    [SerializeField] private AudioSource seSource; //AudioSource
+    private AudioSource audioSource; //AudioSource
 
     [SerializeField] private List<AudioData> bgmDatas; //BGMのデータリスト
     [SerializeField] private List<AudioData> seDatas; //SEのデータリスト
@@ -21,40 +21,45 @@ public class AudioManager : Singleton<AudioManager> //シングルトン継承
     protected override void Awake()
     {
         DontDestroyOnLoad(this);
+        TryGetComponent(out audioSource);
         base.Awake();
     }
 
     //指定した名前のBGMを再生
     public void PlayBGM(string name)
     {
-        if (bgmSource == null) return;
         AudioData data = bgmDatas.Find(bgm => bgm.name == name);
-        bgmSource.clip = data.clip;
-        bgmSource.volume = data.volume;
-        bgmSource.Play();
+        audioSource.clip = data.clip;
+        audioSource.volume = data.volume;
+        audioSource.Play();
+    }
+
+    public void PlaySE(string name)
+    {
+        AudioData data = seDatas.Find(bgm => bgm.name == name);
+        audioSource.clip = data.clip;
+        audioSource.volume = data.volume;
+        audioSource.Play();
     }
 
     //指定した名前のSEを再生
-    public void PlaySE(string name)
+    public void PlaySE(string name, Vector3 position)
     {
-        if (seSource == null) return;
         AudioData data = seDatas.Find(se => se.name == name);
-        seSource.volume = data.volume;
-        seSource.PlayOneShot(data.clip);
+        AudioSource.PlayClipAtPoint(data.clip, position, data.volume);
     }
 
     //BGMを停止させる
     public void StopBGM(bool fade, float seconds)
     {
-        if (bgmSource == null) return;
 
         if (fade)
         {
-            StartCoroutine(VolumeFadeOut(bgmSource, seconds));
+            StartCoroutine(VolumeFadeOut(audioSource, seconds));
             return;
         }
 
-        bgmSource.Stop();
+        audioSource.Stop();
     }
 
     //AudioSourceの音量をフェードアウトさせる関数
@@ -65,6 +70,6 @@ public class AudioManager : Singleton<AudioManager> //シングルトン継承
             source.volume -= (1.0f / 10.0f) / seconds;
             yield return new WaitForSecondsRealtime(0.1f);
         }
-        bgmSource.Stop();
+        audioSource.Stop();
     }
 }

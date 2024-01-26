@@ -46,6 +46,7 @@ public class ZombieGrab : MonoBehaviour, IGrabbable
         rb.useGravity = true;
         zombieThrow.IsThrowing = true;
         rb.AddForce(direction * force / 3, ForceMode.Impulse);
+        AudioManager.instance.PlaySE("Release");
     }
 
 

@@ -43,6 +43,7 @@ public class RevivalItem : MonoBehaviour
                 }
             }
             EffectManager.instance.PlayEffect(2,transform.position);
+            AudioManager.instance.PlaySE("Revive", transform.position);
             if (IsDestroyAfterRevive) { Destroy(gameObject); }
         }
     }

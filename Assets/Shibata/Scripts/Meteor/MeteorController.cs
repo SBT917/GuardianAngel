@@ -40,6 +40,7 @@ public class MeteorController : MonoBehaviour
         Vector3 pos = contact.point;
 
         EffectManager.instance.PlayEffect(1, pos, rot);
+        AudioManager.instance.PlaySE("Explosion", transform.position);
         Destroy(gameObject);
     }
 
