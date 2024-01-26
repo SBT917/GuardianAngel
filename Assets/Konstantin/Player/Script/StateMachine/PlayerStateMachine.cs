@@ -41,5 +41,28 @@ public class PlayerStateMachine : StateMachine
         SwitchState(new PlayerMoveState(this));
     }
 
+    private void OnTriggerEnter(Collider collision)
+    {
 
+        if (collision.gameObject.tag == "Meteor")
+        {
+            PlayerStateMachine stateMachine = gameObject.GetComponent<PlayerStateMachine>();
+            if (stateMachine.currentState is PlayerFlyState)
+            {
+                stateMachine.SwitchState(new PlayerFallState(stateMachine));
+            }
+            else if (stateMachine.currentState is PlayerFallState)
+            {
+                return;
+            }
+            else
+            {
+                if (!playerStunned)
+                {
+                    stateMachine.SwitchState(new PlayerStunState(stateMachine));
+                    EffectManager.instance.PlayEffect(7, gameObject.transform.position);
+                }
+            }
+        }
+    }
 }

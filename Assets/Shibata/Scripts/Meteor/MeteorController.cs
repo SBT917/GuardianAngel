@@ -10,10 +10,7 @@ public class MeteorController : MonoBehaviour
     [SerializeField] private LayerMask ingnoreLayer;
 
 
-    void Awake()
-    {
 
-    }
 
     private void Start()
     {
@@ -39,12 +36,7 @@ public class MeteorController : MonoBehaviour
         Quaternion rot = Quaternion.FromToRotation(Vector3.up, contact.normal);
         Vector3 pos = contact.point;
         EffectManager.instance.PlayEffect(1, pos, rot);
-        if(collision.gameObject.tag == "Player")
-        {
-            PlayerStateMachine stateMachine = collision.gameObject.GetComponent<PlayerStateMachine>();
-            stateMachine.SwitchState(new PlayerStunState(stateMachine));
-        }
         Destroy(gameObject);
     }
-
+   
 }
