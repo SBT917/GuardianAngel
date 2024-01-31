@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityFx.Outline;
-using static UnityEditor.PlayerSettings;
 
 public class PlayerGrab : MonoBehaviour
 {
