@@ -1,134 +1,317 @@
 fileFormatVersion: 2
 guid: 3ef17e1c8cba98f40868ce0bea6d35c1
-timeCreated: 1489913128
-licenseType: Store
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: coffin_03
-    100002: coffin_base
-    100004: coffin_top
-    100006: mud_01
-    100008: tombstone_01
-    100010: tombstone_02
-    100012: tombstone_03
-    100014: tombstone_06
-    100016: tombstone_07
-    100018: tombstone_08
-    100020: tombstone_09
-    100022: tombstone_12
-    100024: tombstone_13
-    100026: tombstone_14
-    100028: tombstone_17
-    100030: //RootNode
-    400000: coffin_03
-    400002: coffin_base
-    400004: coffin_top
-    400006: mud_01
-    400008: tombstone_01
-    400010: tombstone_02
-    400012: tombstone_03
-    400014: tombstone_06
-    400016: tombstone_07
-    400018: tombstone_08
-    400020: tombstone_09
-    400022: tombstone_12
-    400024: tombstone_13
-    400026: tombstone_14
-    400028: tombstone_17
-    400030: //RootNode
-    2300000: coffin_03
-    2300002: coffin_base
-    2300004: coffin_top
-    2300006: mud_01
-    2300008: tombstone_01
-    2300010: tombstone_02
-    2300012: tombstone_03
-    2300014: tombstone_06
-    2300016: tombstone_07
-    2300018: tombstone_08
-    2300020: tombstone_09
-    2300022: tombstone_12
-    2300024: tombstone_13
-    2300026: tombstone_14
-    2300028: tombstone_17
-    3300000: coffin_03
-    3300002: coffin_base
-    3300004: coffin_top
-    3300006: mud_01
-    3300008: tombstone_01
-    3300010: tombstone_02
-    3300012: tombstone_03
-    3300014: tombstone_06
-    3300016: tombstone_07
-    3300018: tombstone_08
-    3300020: tombstone_09
-    3300022: tombstone_12
-    3300024: tombstone_13
-    3300026: tombstone_14
-    3300028: tombstone_17
-    4300000: coffin_base
-    4300002: coffin_03
-    4300004: tombstone_17
-    4300006: mud_01
-    4300008: tombstone_14
-    4300010: tombstone_06
-    4300012: tombstone_13
-    4300014: tombstone_03
-    4300016: tombstone_09
-    4300018: tombstone_12
-    4300020: tombstone_02
-    4300022: tombstone_08
-    4300024: tombstone_07
-    4300026: coffin_top
-    4300028: tombstone_01
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: coffin_03
+  - first:
+      1: 100002
+    second: coffin_base
+  - first:
+      1: 100004
+    second: coffin_top
+  - first:
+      1: 100006
+    second: mud_01
+  - first:
+      1: 100008
+    second: tombstone_01
+  - first:
+      1: 100010
+    second: tombstone_02
+  - first:
+      1: 100012
+    second: tombstone_03
+  - first:
+      1: 100014
+    second: tombstone_06
+  - first:
+      1: 100016
+    second: tombstone_07
+  - first:
+      1: 100018
+    second: tombstone_08
+  - first:
+      1: 100020
+    second: tombstone_09
+  - first:
+      1: 100022
+    second: tombstone_12
+  - first:
+      1: 100024
+    second: tombstone_13
+  - first:
+      1: 100026
+    second: tombstone_14
+  - first:
+      1: 100028
+    second: tombstone_17
+  - first:
+      1: 100030
+    second: //RootNode
+  - first:
+      4: 400000
+    second: coffin_03
+  - first:
+      4: 400002
+    second: coffin_base
+  - first:
+      4: 400004
+    second: coffin_top
+  - first:
+      4: 400006
+    second: mud_01
+  - first:
+      4: 400008
+    second: tombstone_01
+  - first:
+      4: 400010
+    second: tombstone_02
+  - first:
+      4: 400012
+    second: tombstone_03
+  - first:
+      4: 400014
+    second: tombstone_06
+  - first:
+      4: 400016
+    second: tombstone_07
+  - first:
+      4: 400018
+    second: tombstone_08
+  - first:
+      4: 400020
+    second: tombstone_09
+  - first:
+      4: 400022
+    second: tombstone_12
+  - first:
+      4: 400024
+    second: tombstone_13
+  - first:
+      4: 400026
+    second: tombstone_14
+  - first:
+      4: 400028
+    second: tombstone_17
+  - first:
+      4: 400030
+    second: //RootNode
+  - first:
+      23: 2300000
+    second: coffin_03
+  - first:
+      23: 2300002
+    second: coffin_base
+  - first:
+      23: 2300004
+    second: coffin_top
+  - first:
+      23: 2300006
+    second: mud_01
+  - first:
+      23: 2300008
+    second: tombstone_01
+  - first:
+      23: 2300010
+    second: tombstone_02
+  - first:
+      23: 2300012
+    second: tombstone_03
+  - first:
+      23: 2300014
+    second: tombstone_06
+  - first:
+      23: 2300016
+    second: tombstone_07
+  - first:
+      23: 2300018
+    second: tombstone_08
+  - first:
+      23: 2300020
+    second: tombstone_09
+  - first:
+      23: 2300022
+    second: tombstone_12
+  - first:
+      23: 2300024
+    second: tombstone_13
+  - first:
+      23: 2300026
+    second: tombstone_14
+  - first:
+      23: 2300028
+    second: tombstone_17
+  - first:
+      33: 3300000
+    second: coffin_03
+  - first:
+      33: 3300002
+    second: coffin_base
+  - first:
+      33: 3300004
+    second: coffin_top
+  - first:
+      33: 3300006
+    second: mud_01
+  - first:
+      33: 3300008
+    second: tombstone_01
+  - first:
+      33: 3300010
+    second: tombstone_02
+  - first:
+      33: 3300012
+    second: tombstone_03
+  - first:
+      33: 3300014
+    second: tombstone_06
+  - first:
+      33: 3300016
+    second: tombstone_07
+  - first:
+      33: 3300018
+    second: tombstone_08
+  - first:
+      33: 3300020
+    second: tombstone_09
+  - first:
+      33: 3300022
+    second: tombstone_12
+  - first:
+      33: 3300024
+    second: tombstone_13
+  - first:
+      33: 3300026
+    second: tombstone_14
+  - first:
+      33: 3300028
+    second: tombstone_17
+  - first:
+      43: 4300000
+    second: coffin_base
+  - first:
+      43: 4300002
+    second: coffin_03
+  - first:
+      43: 4300004
+    second: tombstone_17
+  - first:
+      43: 4300006
+    second: mud_01
+  - first:
+      43: 4300008
+    second: tombstone_14
+  - first:
+      43: 4300010
+    second: tombstone_06
+  - first:
+      43: 4300012
+    second: tombstone_13
+  - first:
+      43: 4300014
+    second: tombstone_03
+  - first:
+      43: 4300016
+    second: tombstone_09
+  - first:
+      43: 4300018
+    second: tombstone_12
+  - first:
+      43: 4300020
+    second: tombstone_02
+  - first:
+      43: 4300022
+    second: tombstone_08
+  - first:
+      43: 4300024
+    second: tombstone_07
+  - first:
+      43: 4300026
+    second: coffin_top
+  - first:
+      43: 4300028
+    second: tombstone_01
+  externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 1
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
     importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 0
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -138,14 +321,19 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 0
   humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
