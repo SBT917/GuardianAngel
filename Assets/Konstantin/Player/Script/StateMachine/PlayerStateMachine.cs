@@ -43,9 +43,8 @@ public class PlayerStateMachine : StateMachine
         SwitchState(new PlayerMoveState(this));
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.tag == "Meteor")
         {
             PlayerStateMachine stateMachine = gameObject.GetComponent<PlayerStateMachine>();
