@@ -52,7 +52,7 @@ public class PlayerStateMachine : StateMachine
             {
                 stateMachine.SwitchState(new PlayerFallState(stateMachine));
             }
-            else if (stateMachine.currentState is PlayerFallState)
+            else if (stateMachine.currentState is PlayerFallState || stateMachine.currentState is PlayerJumpState)
             {
                 return;
             }
